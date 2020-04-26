@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#app {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: sans-serif;
+  color: white;
+  background: rgb(85, 85, 85)
+}
+.container {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  top :50vh;
+  left :50vw;
+  transform: translate(-50%,-50%);
+}
+a,button {
+  padding: 14px 25px;
+  background-color: #f44336;
+  color: white;
+  text-decoration: none;
+  border: none;
+}
+input {
+  background: none;
+  border: solid 1px black;
+}
