@@ -13,12 +13,12 @@
 .container {
   position: absolute;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   top :50vh;
   left :50vw;
   transform: translate(-50%,-50%);
 }
-a,button {
+a,button.main-button {
   padding: 14px 25px;
   background-color: #f44336;
   color: white;

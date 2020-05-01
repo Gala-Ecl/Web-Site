@@ -1,18 +1,14 @@
 <template>
   <section class="container">
-    <form @submit="connection">
-      <label>Email :</label>
-      <br />
-      <input v-model="email" placeholder="galaEclyps" />
-      <br />
-      <br />
-      <label>Mot de passe :</label>
-      <br />
-      <input type="password" v-model="password" placeholder="galaEclyps" />
-      <br />
-      <br />
-      <button type="submit">Se connecter</button>
-    </form>
+    <label>Email :</label>
+    <br />
+    <input v-model="email" placeholder="galaEclyps" />
+    <br />
+    <label>Mot de passe :</label>
+    <br />
+    <input type="password" v-model="password" placeholder="galaEclyps" />
+    <br />
+    <button @click="connection">Se connecter</button>
   </section>
 </template>
 <script>
@@ -24,19 +20,17 @@ export default {
       password: null
     };
   },
-  mounted() {
-      console.log(this.$store.state)
-  },
   methods: {
-      
     async connection() {
+      console.log({ email: this.email, password: this.password.toString() });
       const { data } = await axios.post(`${process.env.VUE_APP_API_URL}/user`, {
         email: this.email,
-        password: this.password
+        password: this.password.toString()
       });
-      this.$store.commit("login", data);
-      console.log(this.$store.state);
+      if (data) {
+        this.$store.commit("login", data);
         this.$router.push("/space-personnal");
+      }
     }
   }
 };

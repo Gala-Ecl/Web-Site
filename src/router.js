@@ -1,11 +1,11 @@
 import Vue from "vue";
 import Router from "vue-router";
-// import store from "./store";
+import store from "./store";
 
 import Home from "@/components/home";
 import Login from "@/components/login";
 import PersonnalSpace from "@/components/personnal-space";
-// import About from "@/components/about";
+import Party from "@/components/party";
 // import Projects from "@/components/projects";
 // import Contact from "@/components/contact";
 // import Skilder from "@/components/skilder";
@@ -29,17 +29,17 @@ export default new Router({
         {
             path: "/space-personnal",
             name: "space-personnal",
-            component: PersonnalSpace
-            // beforeEnter: (to, from, next) => {
-            //     if (!store.state.isAuthenticated) next("/login")
-            //     else next()
-            // }
+            component: PersonnalSpace,
+            beforeEnter: (to, from, next) => {
+                if (!store.state.isAuthenticated) next("/login")
+                else next()
+            }
         },
-    //     {
-    //         path: "/projects",
-    //         name: "projects",
-    //         component: Projects
-    //     },
+        {
+            path: "/party",
+            name: "party",
+            component: Party
+        },
     //     {
     //         path: "/projects/skilder",
     //         name: "skilder",
