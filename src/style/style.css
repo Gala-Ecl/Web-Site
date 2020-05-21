@@ -1,16 +1,44 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Monoton&family=Raleway&display=swap');
+@font-face {font-family: "Above"; 	src: url('../../ABOVE\ \ -\ PERSONAL\ USE\ ONLY.ttf'); }
+/* ==================== */
+/* -------------------- */
+/*        GENERAL       */
+/* -------------------- */
+/* ==================== */
+*{ 
   margin: 0;
-  padding: 0;
+  padding: 0; 
+  box-sizing: border-box;
 }
-#app {
+:root {                                   /* Définition des variables */
+  --bg-main-color: rgb(230, 230, 230);
+  --bg-color-1: rgb(165, 126, 42);
+  --bg-color-2: rgb(124, 95, 32);
+  --bg-color-3: blue;
+  --txt-main-color:rgb(27, 26, 26);
+  --txt-color-1: white;
+  --txt-color-2: gold;
+  --txt-color-3: black;
+  --line-color-1: black;
+  --line-color-2: white;
+  --line-color-3: grey;
+  --font-main:'Raleway', sans-serif;
+  --font-1: 'Above';
+  --font-2: 'Dancing Script', cursive;
+  --font-3: 'Monoton', cursive;
+}
+#app {                                   /* Voir avec Taz, je sais pas à quoi ça sert */
   margin: 0;
   padding: 0;
   height: 100vh;
   font-family: sans-serif;
-  color: white;
-  background: rgb(85, 85, 85)
+  color: var(--txt-main-color);
+  background:none;
 }
-.container {
+body{                                    /* Corps principal de la page */
+  /* overflow-x: hidden; */
+}
+.container {                             /* 1er exemple de Taz */
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -18,14 +46,243 @@
   left :50vw;
   transform: translate(-50%,-50%);
 }
-a,button.main-button {
+a.main-button {                          /* 1er exemple de Taz */
   padding: 14px 25px;
-  background-color: #f44336;
-  color: white;
+  background-color: var(--bg-color-1);
+  color:var(--txt-color-1);
   text-decoration: none;
   border: none;
+  font-family: var(--font-3);
 }
-input {
+input {                                  /* 1er exemple de Taz */
   background: none;
-  border: solid 1px black;
+  border: solid 1px var(--line-color-1);
+}
+/* ==================== */
+/* -------------------- */
+/*        NAVBAR        */
+/* -------------------- */
+/* ==================== */
+nav{                                    /* Espace global de la navbar */
+  position: fixed;
+  top: 0;
+  width:100vw;
+  background: var(--bg-main-color);
+}
+ul.nav-line-1 {                         /* Première ligne de la navbar */
+  width: 100vw;
+  height: 60px;
+  padding: 0 3vw;
+  background: var(--bg-color-1)
+}
+ul.nav-line-1 li {                      /* Onglet de la première ligne */
+  display: inline-block;
+  color:var(--txt-color-1);
+  background: var(--bg-color-1);
+  transition: .5s;
+}
+ul.nav-line-1 li.active, ul.nav-line-1 li:hover {
+  background-color:var(--bg-color-2);
+}
+ul.nav-line-1 li a {                    /* Lien dans l'onglet de la 1ere ligne  */
+  padding: 0 1vw;
+  line-height:60px;
+  display: inline-block;
+  color: var(--txt-color-1);
+  text-decoration: none;
+  font-family: var(--font-1);
+}
+ul.nav-line-2 {                         /* Exactement les memes elements pour la seconde ligne */
+  width: 100vw;
+  height: 60px;
+  padding: 0 3vw;
+  background: var(--bg-color-2);
+}
+ul.nav-line-2 li {
+  display: inline-block;
+  background: var(--bg-color-2);
+  transition: .5s;
+}
+ul.nav-line-1 li.active, ul.nav-line-2 li:hover {
+  background-color:var(--bg-color-3);
+}
+ul.nav-line-2 li a {
+  padding: 0 1vw;
+  line-height:60px;
+  display: inline-block;
+  color: var(--txt-color-2);
+  text-decoration: none;
+}
+.toggle {                                /* Bouton d'acces au menu (visible sur petit écran) */
+  width:100vw;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 3vw;
+  background-color: var(--bg-color-2);
+  text-align: left;
+  box-sizing: border-box;
+  color:var(--txt-color-1);
+  font-size: 2em;
+  display: none;
+}
+.topple{                                 /* Liens icones de la navbar */
+  width:25vw;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 3vw;
+  background-color: var(--bg-color-1);
+  text-align: right;
+  box-sizing: border-box;
+  color:var(--txt-color-1);
+  font-size: 2em;
+  display: inline-block;
+  position: absolute;
+  top: 0vw ;
+  left: 100vw;
+  transform: translate(-100%,0%);
+}
+.topple a {
+  padding: 0 0.5vw;
+  display: inline-block;
+  color: var(--txt-color-1);
+  text-decoration: none;
+}
+/* ==================== */
+/* -------------------- */
+/*       Sections       */
+/* -------------------- */
+/* ==================== */
+section{                                  /* Section sans classe */
+  width: 100vw;
+  box-sizing: border-box;
+}
+/* --------------------- */
+/*    Sections Images    */
+/* --------------------- */
+section.section-logo-gala {               /* Logo Gala Eclyps */
+  margin:15vh 0 0 0;
+  width: 100vw;
+  height: 50vh;;
+  background: url(../../logogala_sans_fond.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+section.section-logo-edition {             /* Logo de la soirée Gala */
+  width: 100vw;
+  height: 40vh;
+  background: black url(../../logo_gala_2019.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+section.section-bg-image-1 {               /* Section avec image de fond répétée plein de fois */
+  width: 100vw;
+  height: 100vh;
+  background: url(../../Hexagone_dore.png);
+  background-size: 5%;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+section.section-bg-image-2 {               /* Section avec image de fond répétée peu de fois */
+  width: 100vw;
+  height: 100vh;
+  background: url(../../Gatsby_cubes_etires.jpg);
+  background-size: 40%;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+section.section-bg-image-3 {               /* Section avec image de fond qui couvre tout l'espace */
+  width: 100vw;
+  height: 100vh;
+  background: url(../../Bonif.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+/* --------------------- */
+/*    Sections Textes    */
+/* --------------------- */
+section.standard-content{                  /* Bloc de texte standard */
+  padding: 100px;
+}
+section.standard-content h1{               /* Titre du bloc de texte standard */
+  font-size: 2em;
+}
+section.standard-content h2{               /* Sous-titre du bloc de texte standard */
+  font-size: 1.5em;
+}
+section.standard-content p{                /* Corps du bloc de texte standard */
+  font-size: 1em;
+}
+/* --------------------- */
+/*   Sections speciales  */
+/* --------------------- */
+section.countdown{                         /* Compte a rebours avant la soiree */
+  padding: 100px;
+  font-size: 4em;
+  color: var(--txt-color-2);
+  text-align: center;
+}
+section.live-news{                         /* Section Infos ou Actualites */
+  padding: 100px;
+}
+section.warning{                           /* Message d'allerte (navette non reservee ou autre) */
+  padding: 100px;
+}
+section.staff{                             /* Presentation de l'equipe */
+  padding: 100px;
+}
+section.programm{                          /* Accès aux pages Journée / Dîner / Soirée*/
+  padding: 100px;
+}
+/* ===================== */
+/* --------------------- */
+/*  Objets indépendants  */
+/* --------------------- */
+/* ===================== */
+.ticketing{                                /* Cadre billetterie */
+  padding: 100px;
+}
+.video{                                    /* Cadres videos */
+  padding: 100px;
+}
+.image-zoom{                               /* Images avec effet de zoom on hover */
+  padding: 100px;
+}
+.image-color{                              /* Images avec effet de coloration on hover */
+  padding: 100px;
+}
+.staff-photo{                              /* Photos des membres de l'équipe */
+  padding: 100px;
+}
+/* ==================== */
+/* -------------------- */
+/*     SUR TELEPHONE    */
+/* -------------------- */
+/* ==================== */
+@media(max-width: 760px){
+  .toggle {
+   display: block; 
+  }
+  ul.nav-line-1 {
+    width: 100vw;
+    padding: 0;
+  }
+  ul.nav-line-1 li { 
+    display: block;
+    text-align: center;
+  }
+  ul.nav-line-2 {
+    width: 100vw;
+  }
+  ul.nav-line-2 li { 
+    display: block;
+    text-align: center;
+  }
+  .topple{
+    width:50vw;
+    background-color: var(--bg-color-2);
+    color:var(--txt-color-1);
+  }
 }
