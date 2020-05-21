@@ -1,9 +1,9 @@
 <template>
   <nav>
-    <div class="toggle">
+    <div class="toggle" @click="toggleClicked=!toggleClicked">
       <i class="mdi mdi-menu" />
     </div>
-    <ul class="nav-line-1">
+    <ul class="nav-line-1" :class="{'menu-shown':toggleClicked}">
       <li>
          <router-link to="/">Accueil</router-link>
       </li>
@@ -38,6 +38,11 @@
 
 <script>
 export default {
+  data() { 
+    return {
+      toggleClicked : true
+    }
+  }
 };
 </script>
 
