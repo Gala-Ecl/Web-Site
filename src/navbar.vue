@@ -4,10 +4,10 @@
       <i class="mdi mdi-menu" />
     </div>
     <ul class="nav-line-1" :class="{'menu-shown':toggleClicked}">
-      <li>
+      <li :class='{active:$route.name=="home"}' >
          <router-link to="/">Accueil</router-link>
       </li>
-      <li>
+      <li :class='{active:$route.name=="party"}'>
         <router-link to="/party">Journée</router-link>
       </li>
       <li>
