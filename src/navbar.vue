@@ -10,21 +10,21 @@
       <li :class='{active:$route.name=="party"}'>
         <router-link to="/party">Journée</router-link>
       </li>
-      <li>
+      <li :class='{active:$route.name=="party"}'>
         <router-link to="/party">Dîner</router-link>
       </li>
-      <li>
+      <li :class='{active:$route.name=="party"}'>
         <router-link to="/party">Soirée</router-link>
       </li>
-      <li>
+      <li :class='{active:$route.name=="party"}'>
         <router-link to="/party">Infos</router-link>
       </li>
-      <li>
+      <li :class='{active:$route.name=="login"}'>
         <router-link to="/party">Partenaires</router-link>
       </li>
     </ul>
-    <ul class="nav-line-2" v-if="$store.state.authenticated">
-      <li>
+    <ul class="nav-line-2" :class="{'menu-shown':toggleClicked}" v-if="$store.state.authenticated">
+      <li :class='{active:$route.name=="login"}'>
         <router-link to="/space-personnal">Espace personnel</router-link>
       </li>
     </ul>
@@ -40,7 +40,7 @@
 export default {
   data() { 
     return {
-      toggleClicked : true
+      toggleClicked : false
     }
   }
 };

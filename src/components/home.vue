@@ -1,11 +1,25 @@
 <template>
   <section>
-    <section class="section-logo-gala">
+    <section class="section-bandeau">
+    </section>
+    <section class="section-logo">
+      <img class="gala_eclyps" src="../../logogala_sans_fond.png">
+    </section>
+    <section  class="section-moon">
+    UT
+    <div class="moon">
+    </div>
+    PIA
     </section>
     <section class="section-bg-image-1">
     </section>
-    <section class="countdown">
-    [200 jours 15 heures 20 min 18 sec]
+    <section class="section-countdown">
+      <div>
+        <span id="countdown_day" >--</span> jours
+        <span id="countdown_hour">--</span> heures
+        <span id="countdown_min" >--</span> minutes
+        <span id="countdown_sec" >--</span> sec
+      </div>
     </section>
     <section class="standard-content">
       <h1>Bienvenue sur le site du gala</h1>
@@ -14,7 +28,8 @@
     </section>
     <section class="section-bg-image-2">
     </section>
-    <section class="section-logo-edition">
+    <section class="section-logo" style="background:black;">
+      <img class="edition" src="../../logo_gala_2019.jpg">
     </section>
     <section class="section-bg-image-3">
     </section>

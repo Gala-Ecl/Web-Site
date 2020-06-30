@@ -35,9 +35,6 @@
   color: var(--txt-main-color);
   background:none;
 }
-body{                                    /* Corps principal de la page */
-  /* overflow-x: hidden; */
-}
 .container {                             /* 1er exemple de Taz */
   position: absolute;
   display: flex;
@@ -64,16 +61,17 @@ input {                                  /* 1er exemple de Taz */
 /* -------------------- */
 /* ==================== */
 nav{                                    /* Espace global de la navbar */
+  z-index: 8;
   position: fixed;
   top: 0;
   width:100vw;
-  background: var(--bg-main-color);
 }
 ul.nav-line-1 {                         /* Première ligne de la navbar */
   width: 100vw;
   height: 60px;
   padding: 0 3vw;
-  background: var(--bg-color-1)
+  background: var(--bg-color-1);
+  transition: .5s;
 }
 ul.nav-line-1 li {                      /* Onglet de la première ligne */
   display: inline-block;
@@ -97,13 +95,14 @@ ul.nav-line-2 {                         /* Exactement les memes elements pour la
   height: 60px;
   padding: 0 3vw;
   background: var(--bg-color-2);
+  transition: .5s;
 }
 ul.nav-line-2 li {
   display: inline-block;
   background: var(--bg-color-2);
   transition: .5s;
 }
-ul.nav-line-1 li.active, ul.nav-line-2 li:hover {
+ul.nav-line-2 li.active, ul.nav-line-2 li:hover {
   background-color:var(--bg-color-3);
 }
 ul.nav-line-2 li a {
@@ -114,6 +113,8 @@ ul.nav-line-2 li a {
   text-decoration: none;
 }
 .toggle {                                /* Bouton d'acces au menu (visible sur petit écran) */
+  z-index: 10;
+  position: relative;
   width:100vw;
   height: 60px;
   line-height: 60px;
@@ -126,10 +127,11 @@ ul.nav-line-2 li a {
   display: none;
 }
 .topple{                                 /* Liens icones de la navbar */
+  z-index: 10;
   width:25vw;
   height: 60px;
   line-height: 60px;
-  padding: 0 3vw;
+  padding: 0;
   background-color: var(--bg-color-1);
   text-align: right;
   box-sizing: border-box;
@@ -137,9 +139,8 @@ ul.nav-line-2 li a {
   font-size: 2em;
   display: inline-block;
   position: absolute;
-  top: 0vw ;
-  left: 100vw;
-  transform: translate(-100%,0%);
+  top: 0;
+  right: 3vw;
 }
 .topple a {
   padding: 0 0.5vw;
@@ -159,22 +160,27 @@ section{                                  /* Section sans classe */
 /* --------------------- */
 /*    Sections Images    */
 /* --------------------- */
-section.section-logo-gala {               /* Logo Gala Eclyps */
-  margin:15vh 0 0 0;
-  width: 100vw;
-  height: 50vh;;
-  background: url(../../logogala_sans_fond.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+section.section-bandeau {                 /* Section occupant la place de la Navbar */
+  margin: 0;
+  height: 60px;
 }
-section.section-logo-edition {             /* Logo de la soirée Gala */
+section.section-logo {                    /* Section pour les logos */
+  padding: 1vh 0;
   width: 100vw;
-  height: 40vh;
-  background: black url(../../logo_gala_2019.jpg);
+  height: 50vh;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.section-logo img.gala_eclyps {    /* Format des Logo*/
+  width: 85vw;
+}
+section.section-logo img.edition {        /* Logo de la soirée Gala */
+  width: 100vw;
+  background: black
 }
 section.section-bg-image-1 {               /* Section avec image de fond répétée plein de fois */
   width: 100vw;
@@ -218,24 +224,54 @@ section.standard-content p{                /* Corps du bloc de texte standard */
 /* --------------------- */
 /*   Sections speciales  */
 /* --------------------- */
-section.countdown{                         /* Compte a rebours avant la soiree */
+section.section-countdown{                         /* Compte a rebours avant la soiree */
   padding: 100px;
   font-size: 4em;
   color: var(--txt-color-2);
   text-align: center;
 }
-section.live-news{                         /* Section Infos ou Actualites */
+#countdown_day{
+  text-align: center;
+  color: aqua;
+}
+section.section-live-news{                         /* Section Infos ou Actualites */
   padding: 100px;
 }
-section.warning{                           /* Message d'allerte (navette non reservee ou autre) */
+section.section-warning{                           /* Message d'allerte (navette non reservee ou autre) */
   padding: 100px;
 }
-section.staff{                             /* Presentation de l'equipe */
+section.section-staff{                             /* Presentation de l'equipe */
   padding: 100px;
 }
-section.programm{                          /* Accès aux pages Journée / Dîner / Soirée*/
+section.section-programm{                          /* Accès aux pages Journée / Dîner / Soirée*/
   padding: 100px;
 }
+section.section-moon {
+  height: 300px;
+  font-size: 20em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-color-1);
+}
+.moon{
+  background: var(--txt-color-1);
+  width: 256px;
+  height: 256px;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 10px  var(--txt-color-1), 0 0 80px 8px var(--txt-color-1)
+}  
+.moon::before{
+  content: '';
+  background-color: var(--line-color-3);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  animation: 5s cresent  infinite alternate;
+}
+
 /* ===================== */
 /* --------------------- */
 /*  Objets indépendants  */
@@ -256,6 +292,7 @@ section.programm{                          /* Accès aux pages Journée / Dîner
 .staff-photo{                              /* Photos des membres de l'équipe */
   padding: 100px;
 }
+
 /* ==================== */
 /* -------------------- */
 /*     SUR TELEPHONE    */
@@ -263,30 +300,61 @@ section.programm{                          /* Accès aux pages Journée / Dîner
 /* ==================== */
 @media(max-width: 760px){
   .toggle {
-   display: block; 
+   display: block;
   }
   ul.nav-line-1 {
     width: 100vw;
     padding: 0;
-    display: none;
+    position: absolute;
+    top:-600%;
   }
   ul.nav-line-1.menu-shown {
-    display: inline-block;
+    top:60px;
+    display: block;
   }
   ul.nav-line-1 li { 
     display: block;
     text-align: center;
+    border-bottom: 1px solid var(--line-color-2);
   }
   ul.nav-line-2 {
     width: 100vw;
+    padding: 0;
+    position: absolute;
+    top:-600%;
+  }
+  ul.nav-line-2.menu-shown {
+    top:420px;
+    display: block;
   }
   ul.nav-line-2 li { 
     display: block;
     text-align: center;
+    border-bottom: 1px solid var(--line-color-3);
   }
   .topple{
     width:50vw;
     background-color: var(--bg-color-2);
     color:var(--txt-color-1);
+  }
+}
+/* ==================== */
+/* -------------------- */
+/*       Keyframes      */
+/* -------------------- */
+/* ==================== */
+
+@keyframes cresent{
+  0%{
+    transform: translate(-30px, 30px) scale(0.9);
+    box-shadow: none;
+  }
+  50%{
+    transform: translate(0px, 0px) scale(0.98);
+    background-color: var(--txt-main-color);
+  }
+  100%{
+    transform: translate(30px, -30px) scale(0.9);
+    box-shadow: none;
   }
 }
