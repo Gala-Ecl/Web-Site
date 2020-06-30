@@ -14,11 +14,13 @@
   --bg-main-color: rgb(230, 230, 230);
   --bg-color-1: rgb(165, 126, 42);
   --bg-color-2: rgb(124, 95, 32);
-  --bg-color-3: blue;
+  --bg-color-3: rgb(43, 43, 53);
+  --bg-color-4: rgb(69, 69, 80);
   --txt-main-color:rgb(27, 26, 26);
   --txt-color-1: white;
   --txt-color-2: gold;
   --txt-color-3: black;
+  --txt-color-4: rgb(69, 69, 80);
   --line-color-1: black;
   --line-color-2: white;
   --line-color-3: grey;
@@ -26,6 +28,7 @@
   --font-1: 'Above';
   --font-2: 'Dancing Script', cursive;
   --font-3: 'Monoton', cursive;
+  --trans-color-1:rgba(165, 126, 42, .5);
 }
 #app {                                   /* Voir avec Taz, je sais pas à quoi ça sert */
   margin: 0;
@@ -156,6 +159,8 @@ ul.nav-line-2 li a {
 section{                                  /* Section sans classe */
   width: 100vw;
   box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
 }
 /* --------------------- */
 /*    Sections Images    */
@@ -172,9 +177,7 @@ section.section-logo {                    /* Section pour les logos */
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
+ }
 section.section-logo img.gala_eclyps {    /* Format des Logo*/
   width: 85vw;
 }
@@ -184,11 +187,12 @@ section.section-logo img.edition {        /* Logo de la soirée Gala */
 }
 section.section-bg-image-1 {               /* Section avec image de fond répétée plein de fois */
   width: 100vw;
-  height: 100vh;
+  padding: 20vh 1vh;
   background: url(../../Hexagone_dore.png);
   background-size: 5%;
   background-repeat: repeat;
   background-attachment: fixed;
+  display: flex;
 }
 section.section-bg-image-2 {               /* Section avec image de fond répétée peu de fois */
   width: 100vw;
@@ -205,6 +209,39 @@ section.section-bg-image-3 {               /* Section avec image de fond qui cou
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+.container-gallery{
+  margin: 0 auto;
+  width: 50vw;
+}
+.image-box{
+  position: relative;
+  overflow: hidden;
+}
+.image-box img{
+  width: 100%;
+}
+.text-on-image{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--trans-color-1);
+  transition: .5s;
+}
+.text-on-image h1{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1em;
+  color: var(--txt-color-1);
+  font-family: var(--font-1);
+}
+.image-box:hover .text-on-image{
+  left: 100%;
+  overflow: hidden;
 }
 /* --------------------- */
 /*    Sections Textes    */
@@ -225,14 +262,65 @@ section.standard-content p{                /* Corps du bloc de texte standard */
 /*   Sections speciales  */
 /* --------------------- */
 section.section-countdown{                         /* Compte a rebours avant la soiree */
-  padding: 100px;
-  font-size: 4em;
-  color: var(--txt-color-2);
+  padding: 5px 1vw 40px 1vw;
+  width: 100vw;
+  font-size: 2em;
+  color: var(--txt-color-4);
   text-align: center;
+  background: url(../../Gold_Sparkling.jpg);
+  display: flex;
+  flex-direction: column;
 }
-#countdown_day{
+section.section-countdown h2 {
   text-align: center;
-  color: aqua;
+  font-size: 2em;
+  color: var(--txt-color-1);
+}
+section.section-countdown h2 span {
+  display: block;
+  letter-spacing: 6px;
+  font-size: 0.5em;
+  color: var(--txt-color-4);
+}
+.countdown{
+  display: flex;
+  margin-top: 50px;
+}
+.countdown div{
+  position: relative;
+  width: 10vw;
+  height: 10vw;
+  line-height: 10vw;
+  text-align: center;
+  background: var(--bg-color-3);
+  color: var(--txt-color-1);
+  font-family: var(--font-2);
+  margin: 0 15px;
+  font-size: 3em;
+}
+.countdown div::before{
+  content:'';
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  width:100%;
+  height: 35px;
+  background: var(--bg-color-4);
+  color: var(--txt-color-1);
+  font-size: 0.2em;
+  line-height: 35px;
+}
+.countdown #day::before{
+  content:'jours';
+}
+.countdown #hour::before{
+  content:'heures';
+}
+.countdown #minute::before{
+  content:'min';
+}
+.countdown #second::before{
+  content:'sec';
 }
 section.section-live-news{                         /* Section Infos ou Actualites */
   padding: 100px;

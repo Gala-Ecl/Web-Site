@@ -12,14 +12,25 @@
     PIA
     </section>
     <section class="section-bg-image-1">
+      <div class="container-gallery">
+        <div class="image-box">
+          <img src="../../Bonif.jpeg">
+          <div class="text-on-image">
+          <h1>Titre de l'image</h1>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="section-countdown">
-      <div>
-        <span id="countdown_day" >--</span> jours
-        <span id="countdown_hour">--</span> heures
-        <span id="countdown_min" >--</span> minutes
-        <span id="countdown_sec" >--</span> sec
+      <h2><span>Compte à Rebours</span> avant le Gala 2020 </h2>
+      <div class="countdown">
+        <div id="day">20</div>
+        <div id="hour">10</div>
+        <div id="minute">35</div>
+        <div id="second">18</div>
       </div>
+    </section>
+    <section class="section-bg-image-1">
     </section>
     <section class="standard-content">
       <h1>Bienvenue sur le site du gala</h1>
