@@ -24,10 +24,10 @@
     <section class="section-countdown">
       <h2><span>Compte à Rebours</span> avant le Gala 2020 </h2>
       <div class="countdown">
-        <div id="day">20</div>
-        <div id="hour">10</div>
-        <div id="minute">35</div>
-        <div id="second">18</div>
+        <div id="day">{{days}}</div>
+        <div id="hour">{{hours}}</div>
+        <div id="minute">{{minutes}}</div>
+        <div id="second">{{seconds}}</div>
       </div>
     </section>
     <section class="section-bg-image-1">
@@ -64,7 +64,10 @@ export default {
   data() {
     return {
       beginningDatetime: new Date("2020-11-28T20:00:00"),
-      couldownContent: undefined
+      days : undefined,
+      hours : undefined,
+      minutes : undefined,
+      seconds : undefined,
     };
   },
   mounted() {
@@ -73,15 +76,10 @@ export default {
         (this.beginningDatetime.getTime() - Date.now()) / 1000;
       if (differenceTime < 0) this.couldownContent = "";
       else {
-        const days = Math.round(differenceTime / 86400);
-        const hours = Math.round((differenceTime % 86400) / 3600);
-        const minutes = Math.round((differenceTime % 3600)/60);
-        const seconds = Math.round((differenceTime % 60));
-        this.couldownContent = `${days ? days + " jour"+(days>1 ? "s ":" ") : ""}${
-          hours ? hours + " heure"+(hours>1 ? "s ":" ") : ""
-        }${minutes ? minutes + " minute"+(minutes>1 ? "s ":" ") : ""}${
-          seconds ? seconds + " seconde"+(seconds>1 ? "s ":" ") : ""
-        }`;
+        this.days = Math.round(differenceTime / 86400);
+        this.hours = Math.round((differenceTime % 86400) / 3600);
+        this.minutes = Math.round((differenceTime % 3600)/60);
+        this.seconds = Math.round((differenceTime % 60));
       }
     }, 1000);
   }
