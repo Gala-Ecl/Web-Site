@@ -187,7 +187,7 @@ section.section-logo img.edition {        /* Logo de la soirée Gala */
 }
 section.section-bg-image-1 {               /* Section avec image de fond répétée plein de fois */
   width: 100vw;
-  padding: 20vh 1vh;
+  padding: 20vh 5vh;
   background: url(../../Hexagone_dore.png);
   background-size: 5%;
   background-repeat: repeat;
@@ -223,7 +223,6 @@ section.section-bg-image-3 {               /* Section avec image de fond qui cou
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
   overflow: hidden;
 }
 .text-on-image{
