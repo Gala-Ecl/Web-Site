@@ -1,6 +1,5 @@
 <template>
   <section>
-<<<<<<< HEAD
     <section class="section-bandeau">
     </section>
     <section class="section-logo">
@@ -44,14 +43,6 @@
       <img class="edition" src="../../logo_gala_2019.jpg">
     </section>
     <section class="section-bg-image-3">
-=======
-    <section class="section-logo-gala"></section>
-    <section class="section-bg-image-1"></section>
-    <section class="countdown">{{couldownContent}}</section>
-    <section class="standard-content">
-      <h1>Bienvenue sur le site du gala</h1>
-      <br />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.
->>>>>>> 4a2622b4c94d059c971959c909f256e6bcc311a7
     </section>
     <section class="section-bg-image-2"></section>
     <section class="section-logo-edition"></section>
