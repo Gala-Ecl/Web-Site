@@ -9,6 +9,7 @@
   margin: 0;
   padding: 0; 
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 :root {                                   /* Définition des variables */
   --bg-main-color: rgb(230, 230, 230);
@@ -78,6 +79,17 @@ a.main-button {                          /* 1er exemple de Taz */
   transform: translate(-50%);
   border-radius: 1em;
   background: var(--bg-main-color);
+}
+#sign-up {
+  animation: linear shade 1s;
+}
+@keyframes shade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .container-form h1{                      /* Titre du formulaire */
   font-size: 2em;
