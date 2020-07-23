@@ -5,7 +5,7 @@
 /*        GENERAL       */
 /* -------------------- */
 /* ==================== */
-*{ 
+*{   
   margin: 0;
   padding: 0; 
   box-sizing: border-box;
@@ -16,19 +16,24 @@
   --bg-color-2: rgb(124, 95, 32);
   --bg-color-3: rgb(43, 43, 53);
   --bg-color-4: rgb(69, 69, 80);
+  --bg-color-5: rgb(210, 210, 210);
   --txt-main-color:rgb(27, 26, 26);
   --txt-color-1: white;
-  --txt-color-2: gold;
+  --txt-color-2: rgb(124, 95, 32);
   --txt-color-3: black;
   --txt-color-4: rgb(69, 69, 80);
   --line-color-1: black;
   --line-color-2: white;
-  --line-color-3: grey;
+  --line-color-3: rgb(124, 95, 32);
+  --line-color-4: rgb(69, 69, 80);
   --font-main:'Raleway', sans-serif;
   --font-1: 'Above';
   --font-2: 'Dancing Script', cursive;
   --font-3: 'Monoton', cursive;
-  --trans-color-1:rgba(165, 126, 42, .5);
+  --bg-image-1: url(../../Hexagone_dore.png);  
+  --bg-image-2: url(../../Gatsby_cubes_etires.jpg);
+  --bg-image-3: url(../../Bonif.jpeg);
+  --bg-image-countdown: url(../../Gold_Sparkling.jpg);
 }
 #app {                                   /* Voir avec Taz, je sais pas à quoi ça sert */
   margin: 0;
@@ -37,6 +42,10 @@
   font-family: sans-serif;
   color: var(--txt-main-color);
   background:none;
+}
+p, h1, h2, h2, h3, h4, h5, a{
+  font-family: var(--font-main);
+  color: var(--txt-main-color);
 }
 .container {                             /* 1er exemple de Taz */
   position: absolute;
@@ -54,9 +63,89 @@ a.main-button {                          /* 1er exemple de Taz */
   border: none;
   font-family: var(--font-3);
 }
-input {                                  /* 1er exemple de Taz */
+.container-form{                         /* Container pour formulaire */
+  display:flex;
+  flex-direction: column;
+  position: relative;
+  padding: 3em;
+  margin: 1em 0;
+  text-align: center;
+  width: 60vw;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  left :50vw;
+  transform: translate(-50%);
+  border-radius: 1em;
+  background: var(--bg-main-color);
+}
+.container-form h1{                      /* Titre du formulaire */
+  font-size: 2em;
+  font-weight: 300;
+  text-align: center;
+  font-family: var(--font-1);
+  color: var(--txt-color-2);
+}
+.container-form p{                       /* Sous titre du formulaire */
+  font-size: 1em;
+  margin: 1em 0;
+  text-align: center;
+  color: var(--txt-color-4);
+  font-family: var(--font-main) ;
+  font-style: italic;
+}
+.container-form button{                  /* Bouton de formulaire  */
+  background: #fff;
+  color: var(--txt-color-2);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+.container-form button:hover {
+  box-shadow: 0 7px 8px rgba(0, 0, 0, 0.18), 0 5px 5px rgba(0, 0, 0, 0.12);
+}
+.field{                                  /* espace englobant un champ d'un formulaire */
+  position: relative;
+  width:50%;
+  margin: 1em 0;
+}
+input, textarea {                        /* texte renseigné par l'utilisateur */
   background: none;
-  border: solid 1px var(--line-color-1);
+  color: var(--txt-color-2);
+  font-size: 2em;
+  padding: 10px 10px 10px 5px;
+  width: 100%;
+  resize:none;
+  display: block;
+  border: none;
+  border-bottom: 1px solid var(--line-color-4);
+}
+input:focus{
+  outline: none;
+  border-bottom: 1px solid var(--bg-color-1);
+}
+.field span{                             /* texte placé sur le champ avant remplissage */
+  color: var(--txt-color-4);
+  position: absolute;
+  left:0;
+  bottom: 0;
+  padding: 0.9em 5px;
+  font-size: 2em ;
+  font-weight: 300;
+  transition: 0.5s;
+  pointer-events: none;
+}
+.field input:focus ~ span, .field input:valid ~ span{
+  transform: translateY(-3em);
+  font-size: 1em;
+  font-weight: 400;
+  color: var(--bg-color-1);
 }
 /* ==================== */
 /* -------------------- */
@@ -162,9 +251,9 @@ section{                                  /* Section sans classe */
   justify-content: center;
   align-items: center;
 }
-/* --------------------- */
-/*    Sections Images    */
-/* --------------------- */
+/* ------------------------------------- */
+/*    Sections avec background Images    */
+/* ------------------------------------- */
 section.section-bandeau {                 /* Section occupant la place de la Navbar */
   margin: 0;
   height: 60px;
@@ -172,7 +261,6 @@ section.section-bandeau {                 /* Section occupant la place de la Nav
 section.section-logo {                    /* Section pour les logos */
   padding: 1vh 0;
   width: 100vw;
-  height: 50vh;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -187,8 +275,8 @@ section.section-logo img.edition {        /* Logo de la soirée Gala */
 }
 section.section-bg-image-1 {               /* Section avec image de fond répétée plein de fois */
   width: 100vw;
-  padding: 20vh 5vh;
-  background: url(../../Hexagone_dore.png);
+  padding: 20vh 5vw;
+  background: var(--bg-image-1);
   background-size: 5%;
   background-repeat: repeat;
   background-attachment: fixed;
@@ -197,7 +285,7 @@ section.section-bg-image-1 {               /* Section avec image de fond répét
 section.section-bg-image-2 {               /* Section avec image de fond répétée peu de fois */
   width: 100vw;
   height: 100vh;
-  background: url(../../Gatsby_cubes_etires.jpg);
+  background: var(--bg-image-2);
   background-size: 40%;
   background-repeat: repeat;
   background-attachment: fixed;
@@ -205,48 +293,12 @@ section.section-bg-image-2 {               /* Section avec image de fond répét
 section.section-bg-image-3 {               /* Section avec image de fond qui couvre tout l'espace */
   width: 100vw;
   height: 100vh;
-  background: url(../../Bonif.jpeg);
+  background: var(--bg-image-3);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-.container-gallery{
-  margin: 0 0;
-  width: 50vw;
-}
-.image-box{
-  position: relative;
-  overflow: hidden;
-  padding: 0;
-}
-.image-box img{
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-}
-.text-on-image{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--trans-color-1);
-  transition: .5s;
-}
-.text-on-image h1{
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1em;
-  color: var(--txt-color-1);
-  font-family: var(--font-1);
-}
-.image-box:hover .text-on-image{
-  opacity: 0;
-  overflow: hidden;
-}
+
 /* --------------------- */
 /*    Sections Textes    */
 /* --------------------- */
@@ -265,13 +317,21 @@ section.standard-content p{                /* Corps du bloc de texte standard */
 /* --------------------- */
 /*   Sections speciales  */
 /* --------------------- */
+section.section-countdown-border{                         /* Compte a rebours avant la soiree */
+  background: rgb(68, 68, 68) var(--bg-image-countdown);
+  background-blend-mode: hard-light;
+  background-attachment: fixed;
+  display: flex;
+  height: 30em;
+}
 section.section-countdown{                         /* Compte a rebours avant la soiree */
   padding: 5px 1vw 40px 1vw;
-  width: 100vw;
+  width: 30em;
   font-size: 2em;
   color: var(--txt-color-4);
   text-align: center;
-  background: url(../../Gold_Sparkling.jpg);
+  background: var(--bg-image-countdown);
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
 }
@@ -279,22 +339,67 @@ section.section-countdown h2 {
   text-align: center;
   font-size: 2em;
   color: var(--txt-color-1);
+  font-family: var(--font-2);
 }
 section.section-countdown h2 span {
   display: block;
   letter-spacing: 6px;
   font-size: 0.5em;
   color: var(--txt-color-4);
+  font-family: var(--font-2);
 }
+section.section-live-news{                         /* Section Infos ou Actualites */
+  padding: 100px;
+}
+section.section-warning{                           /* Message d'allerte (navette non reservee ou autre) */
+  padding: 100px;
+}
+section.section-staff{                             /* Presentation de l'equipe */
+  padding: 100px;
+}
+section.section-programm{                          /* Accès aux pages Journée / Dîner / Soirée*/
+  padding: 100px;
+}
+section.section-moon {
+  height: 30vw;
+  font-size: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-color-1);
+}
+.moon{
+  background: var(--txt-color-1);
+  width: 20vw;
+  height: 20vw;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 10px  var(--txt-color-1), 0 0 80px 8px var(--txt-color-1);
+}  
+.moon::before{
+  content: '';
+  background-color: var(--line-color-3);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  animation: 5s cresent  infinite alternate;
+}
+
+/* ===================== */
+/* --------------------- */
+/*  Objets indépendants  */
+/* --------------------- */
+/* ===================== */
 .countdown{
   display: flex;
   margin-top: 50px;
 }
 .countdown div{
   position: relative;
-  width: 10vw;
-  height: 10vw;
-  line-height: 10vw;
+  width: 1.7em;
+  height: 1.7em;
+  line-height: 1.7em;
   text-align: center;
   background: var(--bg-color-3);
   color: var(--txt-color-1);
@@ -326,62 +431,136 @@ section.section-countdown h2 span {
 .countdown #second::before{
   content:'sec';
 }
-section.section-live-news{                         /* Section Infos ou Actualites */
-  padding: 100px;
-}
-section.section-warning{                           /* Message d'allerte (navette non reservee ou autre) */
-  padding: 100px;
-}
-section.section-staff{                             /* Presentation de l'equipe */
-  padding: 100px;
-}
-section.section-programm{                          /* Accès aux pages Journée / Dîner / Soirée*/
-  padding: 100px;
-}
-section.section-moon {
-  height: 300px;
-  font-size: 20em;
+.container-gallery{                       /* Container pour gallerie d'images */
+  width: 100vw;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
-  background: var(--bg-color-1);
+  justify-content: center;
 }
-.moon{
-  background: var(--txt-color-1);
-  width: 256px;
-  height: 256px;
-  border-radius: 50%;
+.image-2-1-box,
+.image-1-1-box,
+.image-4-3-box,
+.image-16-9-box,
+.image-A4-box{                           /* Bloc contenant une image et un text superposés au format 2:1*/
+  margin: 1vw;
   position: relative;
-  box-shadow: 0 0 10px  var(--txt-color-1), 0 0 80px 8px var(--txt-color-1)
-}  
-.moon::before{
-  content: '';
-  background-color: var(--line-color-3);
-  position: absolute;
-  height: 100%;
+  overflow: hidden;
+  width: 50vw;
+  height: 25vw;
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+}
+.image-2-1-box img,
+.image-1-1-box img,
+.image-4-3-box img,
+.image-16-9-box img,
+.image-A4-box img{
   width: 100%;
-  border-radius: 50%;
-  animation: 5s cresent  infinite alternate;
+  height: 100%;  
+}
+.image-1-1-box{                            /* le même bloc au format 1:1*/
+  width: 25vw;
+  height: 25vw;
+}
+.image-4-3-box{                            /* le même bloc au format 4:3*/
+  width: 33.3vw;
+  height: 25vw;
+}
+.image-16-9-box{                           /* le même bloc au format 16:9*/
+  width: 44.4vw;
+  height: 25vw;
+}
+.image-A4-box{                             /* le même bloc au format A4*/
+  width: 17.7vw;
+  height: 25vw;
+}
+.text-on-image{                            /* le bloc texte qui apparait on hover */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;  
+  justify-content: center;
+}
+.text-on-image#color{
+  transition: .7s;
+  background: var(--bg-color-2);
+  opacity: 0;
+}
+.text-on-image#zoom{                                  /* le bloc texte qui apparait on hover */
+  transition: .7s;
+  background: transparent;
+  opacity: 1;
+  align-items: center;
+}
+.text-on-image#color h1{
+  position: absolute;
+  top: 20%;
+  font-size: 1em;
+  color: var(--txt-color-1);
+  font-family: var(--font-1);
+  transition: .7s;
+}
+.text-on-image#color p{
+  position: absolute;
+  top: 30%;
+  left: 2%;
+  right: 2%;
+  font-size: 1em;
+  color: var(--txt-color-1);
+  font-family: var(--font-main);
+  text-align: justify;
+  transition: .7s;
+}
+.image-2-1-box:hover .text-on-image#color,
+.image-1-1-box:hover .text-on-image#color,
+.image-4-3-box:hover .text-on-image#color,
+.image-16-9-box:hover .text-on-image#color,
+.image-A4-box:hover .text-on-image#color{
+  opacity: 0.8;
+}
+.image-2-1-box#zoom img,
+.image-1-1-box#zoom img,
+.image-4-3-box#zoom img,
+.image-16-9-box#zoom img,
+.image-A4-box#zoom img{
+  width: 100%;
+  height: 100%;
+  transition: 0.4s;
+}
+.text-on-image#zoom h1{
+  position: absolute;
+  opacity: 0;
+  font-size: 1em;
+  color: var(--txt-color-1);
+  font-family: var(--font-1);
+  transition: .7s;
+}
+.image-2-1-box#zoom:hover .text-on-image#zoom h1,
+.image-1-1-box#zoom:hover .text-on-image#zoom h1,
+.image-4-3-box#zoom:hover .text-on-image#zoom h1,
+.image-16-9-box#zoom:hover .text-on-image#zoom h1,
+.image-A4-box#zoom:hover .text-on-image#zoom h1{
+  opacity: 1;
+}
+.image-2-1-box#zoom:hover img,
+.image-1-1-box#zoom:hover img,
+.image-4-3-box#zoom:hover img,
+.image-16-9-box#zoom:hover img,
+.image-A4-box#zoom:hover img{
+  width: 110%;
+  height: 110%;
+}
+.staff-photo{                              /* Photos des membres de l'équipe */
+  padding: 100px;
 }
 
-/* ===================== */
-/* --------------------- */
-/*  Objets indépendants  */
-/* --------------------- */
-/* ===================== */
 .ticketing{                                /* Cadre billetterie */
   padding: 100px;
 }
 .video{                                    /* Cadres videos */
-  padding: 100px;
-}
-.image-zoom{                               /* Images avec effet de zoom on hover */
-  padding: 100px;
-}
-.image-color{                              /* Images avec effet de coloration on hover */
-  padding: 100px;
-}
-.staff-photo{                              /* Photos des membres de l'équipe */
   padding: 100px;
 }
 
@@ -409,6 +588,10 @@ section.section-moon {
     text-align: center;
     border-bottom: 1px solid var(--line-color-2);
   }
+  ul.nav-line-1 li a {
+    padding: 0 1vw;
+    width: 100vw;
+  }
   ul.nav-line-2 {
     width: 100vw;
     padding: 0;
@@ -429,6 +612,105 @@ section.section-moon {
     background-color: var(--bg-color-2);
     color:var(--txt-color-1);
   }
+  .section.section-logo,
+  .section.section-bandeau,
+  .section.section-bg-image-1,
+  .section.section-bg-image-2,
+  .section.section-bg-image-3,
+  .section.standard-content,
+  .container-gallery{
+    flex-direction: column;
+  }
+  .container-form{
+    padding: 1.5em;
+    width: 96vw;
+  }
+  .field{
+    position: relative;
+    width:85%;
+    margin: 1em 0;
+  }
+  input, textarea {
+    font-size: 1.3em;
+    padding: 10px 10px 5px 5px;
+    width: 100%;
+  }
+  .field span{
+    padding: 1em 5px;
+    font-size: 1.5em ;
+  }
+  .field input:focus ~ span, .field input:valid ~ span{
+    transform: translateY(-2.6em);
+    font-size: 1em;
+  }
+  section.section-countdown-border{                         /* Compte a rebours avant la soiree */
+    height: 15em;
+  }
+  section.section-countdown{                         /* Compte a rebours avant la soiree */
+    padding: 5px 1vw 40px 1vw;
+    width: 10.3em;
+    font-size: 2em;
+  }
+  section.section-countdown h2 {
+    font-size: 1em;
+  }
+  section.section-countdown h2 span {
+    letter-spacing: 4px;
+    font-size: 0.5em;
+  }
+  .countdown{
+    margin-top: 10px;
+  }
+  .countdown div{
+    width: 1.7em;
+    height: 1.7em;
+    line-height: 1.7em;
+    margin: 0 8px;
+    font-size: 1em;
+  }
+  .countdown div::before{
+    content:'';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width:100%;
+    height: 22px;
+    background: var(--bg-color-4);
+    color: var(--txt-color-1);
+    font-size: 0.4em;
+    line-height: 20px;
+  }
+  .image-2-1-box{
+    width: 90vw;
+    height: 45vw;
+  }
+  .image-1-1-box{
+    width: 90vw;
+    height: 90vw;
+  }
+  .image-4-3-box{
+    width: 90vw;
+    height: 67.5vw;
+  }
+  .image-16-9-box{
+    width: 90vw;
+    height: 50.6vw;
+  }
+  .image-A4-box{
+    width: 90vw;
+    height: 127.3vw;
+  }
+  .text-on-image#color h1{
+    top: 10%;
+    font-size: 0.8em;
+  }
+  .text-on-image#color p{
+    top: 20%;
+    font-size: 0.8em;
+  }
+  .text-on-image#zoom h1{
+    font-size: 0.8em;
+  }
 }
 /* ==================== */
 /* -------------------- */
@@ -438,7 +720,7 @@ section.section-moon {
 
 @keyframes cresent{
   0%{
-    transform: translate(-30px, 30px) scale(0.9);
+    transform: translate(-20%, 20%) scale(0.9);
     box-shadow: none;
   }
   50%{
@@ -446,7 +728,7 @@ section.section-moon {
     background-color: var(--txt-main-color);
   }
   100%{
-    transform: translate(30px, -30px) scale(0.9);
+    transform: translate(20%, -20%) scale(0.9);
     box-shadow: none;
   }
 }
