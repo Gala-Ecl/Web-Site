@@ -4,22 +4,22 @@
       <i class="mdi mdi-menu" />
     </div>
     <ul class="nav-line-1" :class="{'menu-shown':toggleClicked}">
-      <li :class='{active:$route.name=="home"}' >
+      <li  @click="toggleClicked=false" :class='{active:$route.name=="home"}' >
          <router-link to="/">Accueil</router-link>
       </li>
-      <li :class='{active:$route.name=="party"}'>
+      <li @click="toggleClicked=false"  :class='{active:$route.name=="party"}'>
         <router-link to="/party">Journée</router-link>
       </li>
-      <li :class='{active:$route.name=="party"}'>
-        <router-link to="/party">Dîner</router-link>
+      <li @click="toggleClicked=false"  :class='{active:$route.name=="diner"}'>
+        <router-link to="/diner">Dîner</router-link>
       </li>
-      <li :class='{active:$route.name=="party"}'>
+      <li @click="toggleClicked=false"  :class='{active:$route.name=="party"}'>
         <router-link to="/party">Soirée</router-link>
       </li>
-      <li :class='{active:$route.name=="party"}'>
+      <li @click="toggleClicked=false"  :class='{active:$route.name=="party"}'>
         <router-link to="/party">Infos</router-link>
       </li>
-      <li :class='{active:$route.name=="login"}'>
+      <li @click="toggleClicked=false"  :class='{active:$route.name=="login"}'>
         <router-link to="/party">Partenaires</router-link>
       </li>
     </ul>

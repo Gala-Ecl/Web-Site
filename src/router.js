@@ -6,6 +6,7 @@ import Home from "@/components/home";
 import Login from "@/components/login";
 import PersonnalSpace from "@/components/personnal-space";
 import Party from "@/components/party";
+import Diner from "@/components/diner";
 // import Projects from "@/components/projects";
 // import Contact from "@/components/contact";
 // import Skilder from "@/components/skilder";
@@ -39,6 +40,11 @@ export default new Router({
             path: "/party",
             name: "party",
             component: Party
+        },
+        {
+            path: "/diner",
+            name: "diner",
+            component: Diner
         },
     //     {
     //         path: "/projects/skilder",
