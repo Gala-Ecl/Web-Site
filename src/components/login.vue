@@ -35,7 +35,21 @@
       <span>Mot de passe</span>
       <br />
     </div>
-    <button @click="connection">Se connecter</button>    
+    <div class="field">
+      <input type="password" v-model="password" required/>
+      <span>Confirmer mdp </span>
+      <br /> 
+    </div>
+    <div class="field">
+      <span>Promotion </span>
+      <select name="nom" size="1">
+        <option>Etudiant à l'ECL</option>
+        <option>Diplômé 2020</option>
+        <option>Ancien diplômé</option>
+      </select>
+      <br /> 
+    </div>
+    <button @click="connection">S'inscrire</button>    
   </section>
 </section>
 </template>
