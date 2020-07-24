@@ -7,6 +7,9 @@ import Login from "@/components/login";
 import PersonnalSpace from "@/components/personnal-space";
 import Party from "@/components/party";
 import Diner from "@/components/diner";
+import Graduation from "@/components/graduation";
+import Information from "@/components/information";
+import Partners from "@/components/partners";
 // import Projects from "@/components/projects";
 // import Contact from "@/components/contact";
 // import Skilder from "@/components/skilder";
@@ -28,6 +31,31 @@ export default new Router({
             component: Login
         },
         {
+            path: "/party",
+            name: "party",
+            component: Party
+        },
+        {
+            path: "/graduation",
+            name: "graduation",
+            component: Graduation
+        },
+        {
+            path: "/information",
+            name: "information",
+            component: Information
+        },
+        {
+            path: "/partners",
+            name: "partners",
+            component: Partners
+        },
+        {
+            path: "/diner",
+            name: "diner",
+            component: Diner
+        },
+        {
             path: "/space-personnal",
             name: "space-personnal",
             component: PersonnalSpace,
@@ -35,16 +63,6 @@ export default new Router({
                 if (!store.state.isAuthenticated) next("/login")
                 else next()
             }
-        },
-        {
-            path: "/party",
-            name: "party",
-            component: Party
-        },
-        {
-            path: "/diner",
-            name: "diner",
-            component: Diner
         },
     //     {
     //         path: "/projects/skilder",
