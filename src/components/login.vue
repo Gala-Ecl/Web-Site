@@ -29,6 +29,16 @@
     <section v-if="signUpShown" id="sign-up" class="container-form">
       <h1>Veuillez créer votre compte</h1>
       <div class="field">
+        <input v-model="newName" id="name" name="name" required />
+        <span>Nom</span>
+        <br />
+      </div>
+      <div class="field">
+        <input v-model="newFirstname" id="firstname" name="firstname" required />
+        <span>Prénom</span>
+        <br />
+      </div>
+      <div class="field">
         <input v-model="newEmail" id="email" name="email" required />
         <span>Email</span>
         <br />
@@ -44,12 +54,14 @@
         <br />
       </div>
       <div class="field">
-        <span>Promotion</span>
-        <select name="nom" size="1">
-          <option>Etudiant à l'ECL</option>
-          <option>Diplômé 2020</option>
-          <option>Ancien diplômé</option>
-        </select>
+        <label for="sign-up-select">Promotion</label>
+        <div class="select-container">
+          <select id="sign-up-select" name="nom" size="1">
+            <option>Etudiant à l'ECL</option>
+            <option>Diplômé 2020</option>
+            <option>Ancien diplômé</option>
+          </select>
+        </div>
         <br />
       </div>
       <button @click="connection">S'inscrire</button>
