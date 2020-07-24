@@ -7,8 +7,8 @@
       <li  @click="toggleClicked=false" :class='{active:$route.name=="home"}' >
          <router-link to="/">Accueil</router-link>
       </li>
-      <li @click="toggleClicked=false"  :class='{active:$route.name=="party"}'>
-        <router-link to="/party">Journée</router-link>
+      <li @click="toggleClicked=false"  :class='{active:$route.name=="graduation"}'>
+        <router-link to="/graduation">Journée</router-link>
       </li>
       <li @click="toggleClicked=false"  :class='{active:$route.name=="diner"}'>
         <router-link to="/diner">Dîner</router-link>
@@ -16,11 +16,11 @@
       <li @click="toggleClicked=false"  :class='{active:$route.name=="party"}'>
         <router-link to="/party">Soirée</router-link>
       </li>
-      <li @click="toggleClicked=false"  :class='{active:$route.name=="party"}'>
-        <router-link to="/party">Infos</router-link>
+      <li @click="toggleClicked=false"  :class='{active:$route.name=="information"}'>
+        <router-link to="/information">Infos</router-link>
       </li>
-      <li @click="toggleClicked=false"  :class='{active:$route.name=="login"}'>
-        <router-link to="/party">Partenaires</router-link>
+      <li @click="toggleClicked=false"  :class='{active:$route.name=="partners"}'>
+        <router-link to="/partners">Partenaires</router-link>
       </li>
     </ul>
     <ul class="nav-line-2" :class="{'menu-shown':toggleClicked}" v-if="$store.state.authenticated">
