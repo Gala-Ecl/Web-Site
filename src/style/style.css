@@ -35,6 +35,7 @@
   --bg-image-2: url(../../Gatsby_cubes_etires.jpg);
   --bg-image-3: url(../../Bonif.jpeg);
   --bg-image-countdown: url(../../Gold_Sparkling.jpg);
+  --nb-info-banner: 4;                   /* Mettre au moins 4 sinon pb de continuite de la bannière */
 }
 #app {                                   /* Voir avec Taz, je sais pas à quoi ça sert */
   margin: 0;
@@ -650,6 +651,35 @@ section.section-moon {
 }
 
 /* --------------------- */
+/*         Banner        */
+/* --------------------- */
+section.section-banner {        /* section definissant le contour de la bannière */
+  width: 100%;
+  overflow: hidden;
+  margin: 10px auto;
+  padding: 2em 0;
+  background: white;
+}
+.photobanner {                  /* element qui bouge comportant toutes les images */
+  width: 700vw;
+  font-size: 0;
+}
+.photobanner img {              /* image dans le photobanner */
+margin-right: 5px;
+height: 337.5px;
+width: 600px;                   /* format 16:9 *//*attention à modifier le keyframe bannermove si vous modifiez ça*/
+transition: all 0.5s ease;
+}
+.photobanner img:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+  box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+}
+.first {
+  animation: bannermove 30s linear infinite;
+}
+
+/* --------------------- */
 /*         Video         */
 /* --------------------- */
 .video{                                    /* Cadres videos */
@@ -758,6 +788,65 @@ input[type="radio"]#show_slide3:checked ~ div.slides {
 }
 /* ==================== */
 /* -------------------- */
+/*       Keyframes      */
+/* -------------------- */
+/* ==================== */
+
+@keyframes cresent{
+  0%{
+    transform: translate(-20%, 20%) scale(0.9);
+    box-shadow: none;
+  }
+  50%{
+    transform: translate(0px, 0px) scale(0.98);
+    background-color: var(--txt-main-color);
+  }
+  100%{
+    transform: translate(20%, -20%) scale(0.9);
+    box-shadow: none;
+  }
+}
+@keyframes scroll-down {
+  0% {
+    opacity: 0;
+    top:-10em;
+  }
+  100% {
+    opacity: 1;
+    top:0;  }
+}
+@keyframes slide {
+  0%, 20%, 100% {
+      left: 0;      /*1ère image*/
+  }
+  35%, 50% {
+      left: -64vw;  /*2ème image*/
+  }
+  70%, 95% {
+      left: -128vw; /*3ème image*/
+  }
+}
+@keyframes slide-tel {
+  0%, 20%, 100% {
+      left: 0;      /*1ère image*/
+  }
+  35%, 50% {
+      left: -80vw;  /*2ème image*/
+  }
+  70%, 95% {
+      left: -160vw; /*3ème image*/
+  }
+}
+@keyframes bannermove {
+  0% {margin-left: 0px;}
+  100% {margin-left: -2420px;}              /* multiple de (taille de chaque image + 5px)*/
+}
+@keyframes bannermove-tel {
+  0% {margin-left: 0px;}
+  100% {margin-left: -1300px;}              /* multiple de (taille de chaque image + 5px)*/
+}
+/* ==================== */
+/* -------------------- */
 /*     SUR TELEPHONE    */
 /* -------------------- */
 /* ==================== */
@@ -839,10 +928,10 @@ input[type="radio"]#show_slide3:checked ~ div.slides {
     padding: 10px 10px 5px 5px;
     font-size: 1.5em;
   }
-  section.section-countdown-border{                         /* Compte a rebours avant la soiree */
+  section.section-countdown-border{                  
     height: 15em;
   }
-  section.section-countdown{                         /* Compte a rebours avant la soiree */
+  section.section-countdown{                         
     padding: 5px 1vw 40px 1vw;
     width: 10.3em;
     font-size: 2em;
@@ -907,44 +996,92 @@ input[type="radio"]#show_slide3:checked ~ div.slides {
   .text-on-image#zoom h1{
     font-size: 0.8em;
   }
-}
-/* ==================== */
-/* -------------------- */
-/*       Keyframes      */
-/* -------------------- */
-/* ==================== */
-
-@keyframes cresent{
-  0%{
-    transform: translate(-20%, 20%) scale(0.9);
-    box-shadow: none;
+  .slider{
+    width: 80vw;
+    height: 45vw;
+    left: 50%;
+    transform: translateX(-50%);
   }
-  50%{
-    transform: translate(0px, 0px) scale(0.98);
-    background-color: var(--txt-main-color);
+  .slides {
+    top: 0;
+    left: 0;
+    display: flex;
+    height: 45vw;
+    animation: slide-tel 20s ease-in-out infinite forwards;
   }
-  100%{
-    transform: translate(20%, -20%) scale(0.9);
-    box-shadow: none;
+  .slides figure {
+    width: 80vw;
+    height: 45vw;
+    margin: 0;
   }
-}
-@keyframes scroll-down {
-  0% {
-    opacity: 0;
-    top:-10em;
+  .slides figure img {
+    width: 100%;
+    height: 45vw;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
   }
-  100% {
+  .slides figure figcaption {
+    position: absolute;
+    top: 0;
+    padding: 2.5em 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: inherit;
+    height: inherit;
+    background-color: var(--bg-color-2);
+    opacity: 0.7;
+  }
+  .slides figure h1{
     opacity: 1;
-    top:0;  }
-}
-@keyframes slide {
-  0%, 20%, 100% {
-      left: 0;      /*1ère image*/
+    font-size: 3em;
+    font-weight: 800;
+    color: white;
   }
-  35%, 50% {
-      left: -64vw; /*2ème image*/
+  .dots_commands  {
+    position: absolute;
+    top: 38vw;
+    width: 80vw;
+    padding:0;
+    margin: 0;
+    text-align: center;
   }
-  70%, 95% {
-      left: -128vw; /*3ème image*/
+  .dots_commands label {
+    position: relative;
+    border: none;
+    display: inline-block;
+    height:8px; width: 8px;
+    margin: 0.8em 0.8em;
+    text-indent: -9999px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  input[type="radio"]#show_slide2:checked ~ div.slides {
+    animation:none;
+    left: -80vw;
+  }
+  input[type="radio"]#show_slide3:checked ~ div.slides {
+    animation:none;
+    left: -160vw;
+  }
+  .photobanner {                  /* element qui bouge comportant toutes les images */
+    width: 1500vw;
+    font-size: 0;
+  }
+  .photobanner img {              /* image dans le photobanner */
+  margin-right: 5px;
+  height: 180px;
+  width: 320px;                   /* format 16:9 *//*attention à modifier le keyframe bannermove si vous modifiez ça*/
+  transition: all 0.5s ease;
+  }
+  .photobanner img:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+  }
+  .first {
+    animation: bannermove-tel 20s linear infinite;
   }
 }
