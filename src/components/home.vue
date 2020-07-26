@@ -89,8 +89,34 @@
     </section>
     <section class="section-bg-image-3">
     </section>
-    <section class="section-bg-image-2"></section>
-    <section class="section-logo-edition"></section>
+    <section class="section-slider"> 
+      <div class="slider">
+        <input type="radio" id="show_slide1" name="slider_commands">
+        <input type="radio" id="show_slide2" name="slider_commands">
+        <input type="radio" id="show_slide3" name="slider_commands">
+        <div class="slides">
+          <figure id="slide1">
+              <a  href="/graduation"><img src="../../diplomes.png" alt="La journée"></a>
+              <figcaption><h1>La Journée</h1></figcaption>
+          </figure>
+          <figure id="slide2">
+              <a  href="/diner"><img src="../../diner.jpg" alt="Le dîner"></a>
+              <figcaption><h1>Le Dîner</h1></figcaption>
+          </figure>
+          <figure id="slide3">
+              <a  href="/party"><img src="../../barnums.png" alt="La Soirée"></a>
+              <figcaption><h1>La Soirée</h1></figcaption>
+          </figure>
+        </div>
+        <nav>
+          <ul class="dots_commands">
+            <li><label for="show_slide1">Slide 1</label></li>
+            <li><label for="show_slide2">Slide 2</label></li>
+            <li><label for="show_slide3">Slide 3</label></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
     <section class="section-bg-image-1">
       <div class="container-gallery">
         <div class="image-2-1-box" id="zoom">

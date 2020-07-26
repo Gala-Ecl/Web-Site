@@ -4,42 +4,34 @@
     </section>
     <section class="section-banner">
       <div class="photobanner">
-        <img class="first" src="../../Info_Defilante_1.png">
-        <img src="../../Info_Defilante_2.png">
-        <img src="../../Info_Defilante_3.png">
-        <img src="../../Info_Defilante_4.png">
-        <img src="../../Info_Defilante_1.png"> <!-- Remettre les 4 premieres pour effet de continuite -->
-        <img src="../../Info_Defilante_2.png">
-        <img src="../../Info_Defilante_3.png">
+        <a  href="/party"><img class="first" src="../../Info_Defilante_1.png"></a>
+        <a  href="/party"><img src="../../Info_Defilante_2.png"></a>
+        <a  href="/party"><img src="../../Info_Defilante_3.png"></a>
+        <a  href="/party"><img src="../../Info_Defilante_4.png"></a>
+        <a  href="/party"><img src="../../Info_Defilante_1.png"></a> <!-- Remettre les 4 premieres pour effet de continuite -->
+        <a  href="/party"><img src="../../Info_Defilante_2.png"></a>
+        <a  href="/party"><img src="../../Info_Defilante_3.png"></a>
       </div>
     </section>
-    <section> 
-      <div class="slider">
-        <input type="radio" id="show_slide1" name="slider_commands">
-        <input type="radio" id="show_slide2" name="slider_commands">
-        <input type="radio" id="show_slide3" name="slider_commands">
-        <div class="slides">
-          <figure id="slide1">
-              <img src="../../diplomes.png" alt="La journée">
-              <figcaption><h1>La Journée</h1></figcaption>
-          </figure>
-          <figure id="slide2">
-              <img src="../../diner.jpg" alt="Le dîner">
-              <figcaption><h1>Le Dîner</h1></figcaption>
-          </figure>
-          <figure id="slide3">
-              <img src="../../barnums.png" alt="La Soirée">
-              <figcaption><h1>La Soirée</h1></figcaption>
-          </figure>
-        </div>
-        <nav>
-          <ul class="dots_commands">
-            <li><label for="show_slide1">Slide 1</label></li>
-            <li><label for="show_slide2">Slide 2</label></li>
-            <li><label for="show_slide3">Slide 3</label></li>
-          </ul>
-        </nav>
+    <section class="section-bg-image-2">
+      <div class="tickets">
+        <a class="ticket-button" href="/party">TICKET</a>
       </div>
+    </section>
+    <section class="standard-content">
+      <h1>Présentation de la soirée</h1>
+      <br/>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.
+    </section>
+    <section class="standard-content">
+      <h1>Présentation du site (photos, localisation,...)</h1>
+      <br/>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.
+    </section>
+    <section class="standard-content">
+      <h1>Contacts (photos d'équipe + individuelles avec poste et contact)</h1>
+      <br/>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.
     </section>
   </section>
 </template>

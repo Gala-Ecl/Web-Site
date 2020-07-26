@@ -21,11 +21,12 @@
   --txt-main-color:rgb(27, 26, 26);
   --txt-color-1: white;
   --txt-color-2: rgb(124, 95, 32);
-  --txt-color-3: black;
+  --txt-color-3: rgb(43, 43, 53);
   --txt-color-4: rgb(69, 69, 80);
-  --line-color-1: black;
-  --line-color-2: white;
-  --line-color-3: rgb(124, 95, 32);
+  --line-main-color: black;
+  --line-color-1: white;
+  --line-color-2: rgb(124, 95, 32);
+  --line-color-3: rgb(43, 43, 53);;
   --line-color-4: rgb(69, 69, 80);
   --font-main:'Raleway', sans-serif;
   --font-1: 'Above';
@@ -94,13 +95,21 @@ a.main-button {                          /* 1er exemple de Taz */
   font-family: var(--font-1);
   color: var(--txt-color-2);
 }
-.container-form p{                       /* Sous titre du formulaire */
+.container-form h2{                      /* Sous titre du formulaire */
   font-size: 1em;
   margin: 1em 0;
   text-align: center;
   color: var(--txt-color-4);
   font-family: var(--font-main) ;
   font-style: italic;
+  font-weight: 300;
+}
+.container-form a{                       /* Texte dans le formulaire */
+  font-size: 0.7em;
+  text-align: center;
+  color: var(--txt-color-4);
+  font-family: var(--font-main) ;
+  text-decoration: none;
 }
 .container-form button{                  /* Bouton de formulaire  */
   background: #fff;
@@ -135,6 +144,9 @@ input, textarea {                        /* texte renseigné par l'utilisateur *
   border: none;
   border-bottom: 1px solid var(--line-color-4);
 }
+.error-password, .error-password:valid, .error-password:focus{
+  border-bottom: 1px solid red;
+}  
 input:focus{
   outline: none;
   border-bottom: 1px solid var(--bg-color-1);
@@ -326,7 +338,6 @@ section{                                  /* Section sans classe */
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
-  padding: 1em 0;
 }
 /* ------------------------------------- */
 /*    Sections avec background Images    */
@@ -366,6 +377,7 @@ section.section-bg-image-2 {               /* Section avec image de fond répét
   background-size: 40%;
   background-repeat: repeat;
   background-attachment: fixed;
+  display: flex;
 }
 section.section-bg-image-3 {               /* Section avec image de fond qui couvre tout l'espace */
   width: 100vw;
@@ -374,6 +386,7 @@ section.section-bg-image-3 {               /* Section avec image de fond qui cou
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  display: flex;
 }
 
 /* --------------------- */
@@ -392,48 +405,14 @@ section.standard-content p{                /* Corps du bloc de texte standard */
   font-size: 1em;
 }
 /* --------------------- */
-/*   Sections speciales  */
+/*       Warning         */
 /* --------------------- */
-section.section-countdown-border{                         /* Compte a rebours avant la soiree */
-  background: rgb(68, 68, 68) var(--bg-image-countdown);
-  background-blend-mode: hard-light;
-  background-attachment: fixed;
-  display: flex;
-  height: 30em;
-}
-section.section-countdown{                         /* Compte a rebours avant la soiree */
-  padding: 5px 1vw 40px 1vw;
-  width: 30em;
-  font-size: 2em;
-  color: var(--txt-color-4);
-  text-align: center;
-  background: var(--bg-image-countdown);
-  background-attachment: fixed;
-  display: flex;
-  flex-direction: column;
-}
-section.section-countdown h2 {
-  text-align: center;
-  font-size: 2em;
-  color: var(--txt-color-1);
-  font-family: var(--font-2);
-}
-section.section-countdown h2 span {
-  display: block;
-  letter-spacing: 6px;
-  font-size: 0.5em;
-  color: var(--txt-color-4);
-  font-family: var(--font-2);
-}
 section.section-warning{                           /* Message d'allerte (navette non reservee ou autre) */
   padding: 100px;
 }
-section.section-staff{                             /* Presentation de l'equipe */
-  padding: 100px;
-}
-section.section-programm{                          /* Accès aux pages Journée / Dîner / Soirée*/
-  padding: 100px;
-}
+/* --------------------- */
+/*        Utopia         */
+/* --------------------- */
 section.section-moon {
   height: 30vw;
   font-size: 20vw;
@@ -469,6 +448,37 @@ section.section-moon {
 /* --------------------- */
 /*       Countdown       */
 /* --------------------- */
+section.section-countdown-border{                         /* Compte a rebours avant la soiree */
+  background: rgb(68, 68, 68) var(--bg-image-countdown);
+  background-blend-mode: hard-light;
+  background-attachment: fixed;
+  display: flex;
+  height: 30em;
+}
+section.section-countdown{                         /* Compte a rebours avant la soiree */
+  padding: 5px 1vw 40px 1vw;
+  width: 30em;
+  font-size: 2em;
+  color: var(--txt-color-4);
+  text-align: center;
+  background: var(--bg-image-countdown);
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+}
+section.section-countdown h2 {
+  text-align: center;
+  font-size: 2em;
+  color: var(--txt-color-1);
+  font-family: var(--font-2);
+}
+section.section-countdown h2 span {
+  display: block;
+  letter-spacing: 6px;
+  font-size: 0.5em;
+  color: var(--txt-color-4);
+  font-family: var(--font-2);
+}
 .countdown{
   display: flex;
   margin-top: 50px;
@@ -635,30 +645,60 @@ section.section-moon {
   width: 110%;
   height: 110%;
 }
-
 /* --------------------- */
 /*       Staff Photo     */
 /* --------------------- */
+/* --------------------- */
+/*      Photo Staff      */
+/* --------------------- */
+section.section-staff{                             /* Presentation de l'equipe */
+  padding: 100px;
+}
 .staff-photo{                              /* Photos des membres de l'équipe */
   padding: 100px;
 }
-
 /* --------------------- */
 /*       Ticketting      */
 /* --------------------- */
+.tickets{
+  position: relative;
+  height: 234px;
+  width: 300px;
+  padding: 140px 70px 30px 55px;
+  background-image: url(../../icone_ticket.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+}
+a.ticket-button{
+  display: inline-block;
+  text-align: center;
+  padding: 8px;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 35px;
+  color: var(--txt-color-3);
+  background-color: var(--bg-color-1);
+  border: 3px solid var(--line-color-3);
+  border-radius: 8px;
+}
+a.ticket-button:hover{
+  font-weight: 900;
+  color: var(--txt-color-1);
+  border: 3px solid var(--line-color-1);
+  border-radius: 8px;
+}
 .ticketing{                                /* Cadre billetterie */
   padding: 100px;
 }
-
 /* --------------------- */
 /*         Banner        */
 /* --------------------- */
 section.section-banner {        /* section definissant le contour de la bannière */
   width: 100%;
   overflow: hidden;
-  margin: 10px auto;
   padding: 2em 0;
-  background: white;
+  background: var(--bg-main-color);
 }
 .photobanner {                  /* element qui bouge comportant toutes les images */
   width: 700vw;
@@ -678,7 +718,6 @@ transition: all 0.5s ease;
 .first {
   animation: bannermove 30s linear infinite;
 }
-
 /* --------------------- */
 /*         Video         */
 /* --------------------- */
@@ -690,6 +729,16 @@ transition: all 0.5s ease;
 /*        Slider         */
 /* --------------------- */
 
+section.section-slider{
+  width: 100%;
+  overflow: hidden;
+  padding: 2em 0;
+  background: var(--bg-image-1) var(--bg-main-color);
+  background-size: 5%;
+  background-blend-mode: screen;
+  background-attachment: fixed;
+
+}
 .slider{
   position: relative;
   width: 64vw;
@@ -734,6 +783,7 @@ transition: all 0.5s ease;
   height: inherit;
   background-color: var(--bg-color-2);
   opacity: 0.7;
+  pointer-events: none;
 }
 .slides figure h1{
   opacity: 1;

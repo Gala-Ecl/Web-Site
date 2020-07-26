@@ -3,7 +3,7 @@
     <section class="section-bandeau"></section>
     <section class="container-form">
       <h1>Veuillez vous connecter</h1>
-      <p>Vous avez déjà un compte Gala Eclyps</p>
+      <h2>Vous avez déjà un compte Gala Eclyps</h2>
       <div class="field">
         <br />
         <input v-model="email" id="email" name="email" required />
@@ -17,9 +17,10 @@
       </div>
       <button @click="connection">Se connecter</button>
       <br />
+      <a href=/party>Mot de passe oublié ?</a>
     </section>
     <section class="container-form">
-      <p>Vous n'avez pas encore de compte ?</p>
+      <h2>Vous n'avez pas encore de compte ?</h2>
       <button @click="signUpShown=!signUpShown; scrollDown();">
         S'inscrire
         <i v-if="!signUpShown" class="mdi mdi-chevron-down" />
@@ -48,8 +49,8 @@
         <span>Mot de passe</span>
         <br />
       </div>
-      <div class="field" :class="{'not-the-same':!samePassword}">
-        <input type="password" v-model="passwordConfirmation" required />
+      <div class="field">
+        <input type="password" :class="{'error-password':!samePassword}" v-model="passwordConfirmation" required />
         <span>Confirmer mdp</span>
         <br />
       </div>
@@ -87,7 +88,7 @@ export default {
       if (this.passwordConfirmation && this.passwordConfirmation != this.newPassword)
         this.samePassword = false;
       else this.samePassword = true;
-    }, 1000);
+    }, 100);
   },
   methods: {
     async connection() {
