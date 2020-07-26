@@ -10,6 +10,7 @@ import Diner from "@/components/diner";
 import Graduation from "@/components/graduation";
 import Information from "@/components/information";
 import Partners from "@/components/partners";
+import Ticketing from "@/components/partners";
 // import Projects from "@/components/projects";
 // import Contact from "@/components/contact";
 // import Skilder from "@/components/skilder";
@@ -54,6 +55,11 @@ export default new Router({
             path: "/diner",
             name: "diner",
             component: Diner
+        },
+        {
+            path: "/ticketing",
+            name: "ticketing",
+            component: Ticketing
         },
         {
             path: "/space-personnal",

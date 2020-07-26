@@ -29,10 +29,12 @@
       </li>
     </ul>
     <div class="topple">
-      <router-link to="/login"><i class="mdi mdi-account-check" /></router-link>
+      <router-link to="/ticketing"><i class="mdi mdi-cash-multiple" /></router-link>
       <router-link to="/login"><i class="mdi mdi-linkedin" /></router-link>
       <router-link to="/login"><i class="mdi mdi-facebook" /></router-link>
-    </div>  
+      <router-link to="/login" v-if="$store.state.authenticated"><i class="mdi mdi-account-check"/></router-link>
+      <router-link to="/login"><i class="mdi mdi-account-lock-outline" v-if="!$store.state.authenticated"/></router-link>
+      </div>   
   </nav>
 </template>
 
