@@ -23,15 +23,15 @@
         <router-link to="/partners">Partenaires</router-link>
       </li>
     </ul>
-    <ul class="nav-line-2" :class="{'menu-shown':toggleClicked}" v-if="$store.state.authenticated">
+    <ul class="nav-line-2" :class="{'menu-shown':toggleClicked}" v-if="$store.state.isAuthenticated">
       <li :class='{active:$route.name=="login"}'>
         <router-link to="/space-personnal">Espace personnel</router-link>
       </li>
     </ul>
     <div class="topple">
       <router-link to="/ticketing"><i class="mdi mdi-cash-multiple" /></router-link>
-      <router-link to="/login"><i class="mdi mdi-linkedin" /></router-link>
-      <router-link to="/login"><i class="mdi mdi-facebook" /></router-link>
+      <a href="https://www.linkedin.com/company/gala-eclyps-aeecl/"><i class="mdi mdi-linkedin" /></a>
+      <a href="https://www.facebook.com/galaeclyps"><i class="mdi mdi-facebook" /></a>
       <router-link to="/login" v-if="$store.state.authenticated"><i class="mdi mdi-account-check"/></router-link>
       <router-link to="/login"><i class="mdi mdi-account-lock-outline" v-if="!$store.state.authenticated"/></router-link>
       </div>   
