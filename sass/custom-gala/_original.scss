@@ -1,0 +1,609 @@
+//contient le fichier css du premier essai
+
+:root {                                   /* Définition des variables */
+  --bg-main-color: rgb(230, 230, 230);
+  --bg-color-1: rgb(165, 126, 42);
+  --bg-color-2: rgb(124, 95, 32);
+  --bg-color-3: rgb(43, 43, 53);
+  --bg-color-4: rgb(69, 69, 80);
+  --bg-color-5: rgb(210, 210, 210);
+  --txt-main-color:rgb(27, 26, 26);
+  --txt-color-1: white;
+  --txt-color-2: rgb(124, 95, 32);
+  --txt-color-3: rgb(43, 43, 53);
+  --txt-color-4: rgb(69, 69, 80);
+  --line-main-color: black;
+  --line-color-1: white;
+  --line-color-2: rgb(124, 95, 32);
+  --line-color-3: rgb(43, 43, 53);;
+  --line-color-4: rgb(69, 69, 80);
+  --font-main:'Raleway', sans-serif;
+  --font-1: 'Above';
+  --font-2: 'Dancing Script', cursive;
+  --font-3: 'Monoton', cursive;
+  --bg-image-1: url(../../Hexagone_dore.png);  
+  --bg-image-2: url(../../Gatsby_cubes_etires.jpg);
+  --bg-image-3: url(../../Bonif.jpeg);
+  --bg-image-countdown: url(../../Gold_Sparkling.jpg);
+  --nb-info-banner: 4;                   /* Mettre au moins 4 sinon pb de continuite de la bannière */
+}
+
+.container {                             /* 1er exemple de Taz */
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top :50vh;
+  left :50vw;
+  transform: translate(-50%,-50%);
+}
+a.main-button {                          /* 1er exemple de Taz */
+  padding: 14px 25px;
+  background-color: var(--bg-color-1);
+  color:var(--txt-color-1);
+  text-decoration: none;
+  border: none;
+  font-family: var(--font-3);
+}
+
+/* ------------------------------------- */
+/*    Sections avec background Images    */
+/* ------------------------------------- */
+section.section-bandeau {                 /* Section occupant la place de la Navbar */
+  margin: 0;
+  height: 60px;
+}
+section.section-logo {                    /* Section pour les logos */
+  padding: 1vh 0;
+  width: 100vw;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+ }
+section.section-logo img.gala_eclyps {    /* Format des Logo*/
+  width: 85vw;
+}
+section.section-logo img.edition {        /* Logo de la soirée Gala */
+  width: 100vw;
+  background: black
+}
+section.section-bg-image-1 {               /* Section avec image de fond répétée plein de fois */
+  width: 100vw;
+  padding: 20vh 5vw;
+  background: var(--bg-image-1);
+  background-size: 5%;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-flow: row wrap;
+}
+.section.section-bg-image-1 > *{           /* Permet de faire passer à la ligne si trop d'éléments */
+  flex:1 100%;
+}
+section.section-bg-image-2 {               /* Section avec image de fond répétée peu de fois */
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-image-2);
+  background-size: 40%;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  display: flex;
+}
+section.section-bg-image-3 {               /* Section avec image de fond qui couvre tout l'espace */
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-image-3);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+}
+
+/* --------------------- */
+/*    Sections Textes    */
+/* --------------------- */
+section.standard-content{                  /* Bloc de texte standard */
+  padding: 100px;
+}
+section.standard-content h1{               /* Titre du bloc de texte standard */
+  font-size: 2em;
+}
+section.standard-content h2{               /* Sous-titre du bloc de texte standard */
+  font-size: 1.5em;
+}
+section.standard-content p{                /* Corps du bloc de texte standard */
+  font-size: 1em;
+}
+/* --------------------- */
+/*       Warning         */
+/* --------------------- */
+section.section-warning{                           /* Message d'allerte (navette non reservee ou autre) */
+  padding: 100px;
+}
+
+/* ===================== */
+/* --------------------- */
+/*  Objets indépendants  */
+/* --------------------- */
+/* ===================== */
+
+
+/* --------------------- */
+/*        Gallery        */
+/* --------------------- */
+.container-gallery{                       /* Container pour gallerie d'images */
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.image-2-1-box,
+.image-1-1-box,
+.image-4-3-box,
+.image-16-9-box,
+.image-A4-box{                           /* Bloc contenant une image et un text superposés au format 2:1*/
+  margin: 1vw;
+  position: relative;
+  overflow: hidden;
+  width: 50vw;
+  height: 25vw;
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+}
+.image-2-1-box img,
+.image-1-1-box img,
+.image-4-3-box img,
+.image-16-9-box img,
+.image-A4-box img{
+  width: 100%;
+  height: 100%;  
+}
+.image-1-1-box{                            /* le même bloc au format 1:1*/
+  width: 25vw;
+  height: 25vw;
+}
+.image-4-3-box{                            /* le même bloc au format 4:3*/
+  width: 33.3vw;
+  height: 25vw;
+}
+.image-16-9-box{                           /* le même bloc au format 16:9*/
+  width: 44.4vw;
+  height: 25vw;
+}
+.image-A4-box{                             /* le même bloc au format A4*/
+  width: 17.7vw;
+  height: 25vw;
+}
+.text-on-image{                            /* le bloc texte qui apparait on hover */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;  
+  justify-content: center;
+}
+.text-on-image#color{
+  transition: .7s;
+  background: var(--bg-color-2);
+  opacity: 0;
+}
+.text-on-image#zoom{                                  /* le bloc texte qui apparait on hover */
+  transition: .7s;
+  background: transparent;
+  opacity: 1;
+  align-items: center;
+}
+.text-on-image#color h1{
+  position: absolute;
+  top: 20%;
+  font-size: 1em;
+  color: var(--txt-color-1);
+  font-family: var(--font-1);
+  transition: .7s;
+}
+.text-on-image#color p{
+  position: absolute;
+  top: 30%;
+  left: 2%;
+  right: 2%;
+  font-size: 1em;
+  color: var(--txt-color-1);
+  font-family: var(--font-main);
+  text-align: justify;
+  transition: .7s;
+}
+.image-2-1-box:hover .text-on-image#color,
+.image-1-1-box:hover .text-on-image#color,
+.image-4-3-box:hover .text-on-image#color,
+.image-16-9-box:hover .text-on-image#color,
+.image-A4-box:hover .text-on-image#color{
+  opacity: 0.8;
+}
+.image-2-1-box#zoom img,
+.image-1-1-box#zoom img,
+.image-4-3-box#zoom img,
+.image-16-9-box#zoom img,
+.image-A4-box#zoom img{
+  width: 100%;
+  height: 100%;
+  transition: 0.4s;
+}
+.text-on-image#zoom h1{
+  position: absolute;
+  opacity: 0;
+  font-size: 1em;
+  color: var(--txt-color-1);
+  font-family: var(--font-1);
+  transition: .7s;
+}
+.image-2-1-box#zoom:hover .text-on-image#zoom h1,
+.image-1-1-box#zoom:hover .text-on-image#zoom h1,
+.image-4-3-box#zoom:hover .text-on-image#zoom h1,
+.image-16-9-box#zoom:hover .text-on-image#zoom h1,
+.image-A4-box#zoom:hover .text-on-image#zoom h1{
+  opacity: 1;
+}
+.image-2-1-box#zoom:hover img,
+.image-1-1-box#zoom:hover img,
+.image-4-3-box#zoom:hover img,
+.image-16-9-box#zoom:hover img,
+.image-A4-box#zoom:hover img{
+  width: 110%;
+  height: 110%;
+}
+/* --------------------- */
+/*       Staff Photo     */
+/* --------------------- */
+/* --------------------- */
+/*      Photo Staff      */
+/* --------------------- */
+section.section-staff{                             /* Presentation de l'equipe */
+  padding: 100px;
+}
+.staff-photo{                              /* Photos des membres de l'équipe */
+  padding: 100px;
+}
+/* --------------------- */
+/*       Ticketting      */
+/* --------------------- */
+.tickets{
+  position: relative;
+  height: 234px;
+  width: 300px;
+  padding: 140px 70px 30px 55px;
+  background-image: url(../../icone_ticket.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+}
+a.ticket-button{
+  display: inline-block;
+  text-align: center;
+  padding: 8px;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 35px;
+  color: var(--txt-color-3);
+  background-color: var(--bg-color-1);
+  border: 3px solid var(--line-color-3);
+  border-radius: 8px;
+}
+a.ticket-button:hover{
+  font-weight: 900;
+  color: var(--txt-color-1);
+  border: 3px solid var(--line-color-1);
+  border-radius: 8px;
+}
+.ticketing{                                /* Cadre billetterie */
+  padding: 100px;
+}
+
+/* --------------------- */
+/*         Video         */
+/* --------------------- */
+.video{                                    /* Cadres videos */
+  padding: 100px;
+}
+
+
+/* ==================== */
+/* -------------------- */
+/*       Keyframes      */
+/* -------------------- */
+/* ==================== */
+
+@keyframes cresent{
+  0%{
+    transform: translate(-20%, 20%) scale(0.9);
+    box-shadow: none;
+  }
+  50%{
+    transform: translate(0px, 0px) scale(0.98);
+    background-color: var(--txt-main-color);
+  }
+  100%{
+    transform: translate(20%, -20%) scale(0.9);
+    box-shadow: none;
+  }
+}
+@keyframes scroll-down {
+  0% {
+    opacity: 0;
+    top:-10em;
+  }
+  100% {
+    opacity: 1;
+    top:0;  }
+}
+@keyframes slide {
+  0%, 20%, 100% {
+      left: 0;      /*1ère image*/
+  }
+  35%, 50% {
+      left: -64vw;  /*2ème image*/
+  }
+  70%, 95% {
+      left: -128vw; /*3ème image*/
+  }
+}
+@keyframes slide-tel {
+  0%, 20%, 100% {
+      left: 0;      /*1ère image*/
+  }
+  35%, 50% {
+      left: -80vw;  /*2ème image*/
+  }
+  70%, 95% {
+      left: -160vw; /*3ème image*/
+  }
+}
+@keyframes bannermove {
+  0% {margin-left: 0px;}
+  100% {margin-left: -2420px;}              /* multiple de (taille de chaque image + 5px)*/
+}
+@keyframes bannermove-tel {
+  0% {margin-left: 0px;}
+  100% {margin-left: -1300px;}              /* multiple de (taille de chaque image + 5px)*/
+}
+/* ==================== */
+/* -------------------- */
+/*     SUR TELEPHONE    */
+/* -------------------- */
+/* ==================== */
+@media(max-width: 760px){
+  .toggle {
+   display: block;
+  }
+  ul.nav-line-1 {
+    width: 100vw;
+    padding: 0;
+    position: absolute;
+    top:-600%;
+  }
+  ul.nav-line-1.menu-shown {
+    top:60px;
+    display: block;
+  }
+  ul.nav-line-1 li { 
+    display: block;
+    text-align: center;
+    border-bottom: 1px solid var(--line-color-2);
+  }
+  ul.nav-line-1 li a {
+    padding: 0 1vw;
+    width: 100vw;
+  }
+  ul.nav-line-2 {
+    width: 100vw;
+    padding: 0;
+    position: absolute;
+    top:-600%;
+  }
+  ul.nav-line-2.menu-shown {
+    top:420px;
+    display: block;
+  }
+  ul.nav-line-2 li { 
+    display: block;
+    text-align: center;
+    border-bottom: 1px solid var(--line-color-3);
+  }
+  .topple{
+    width:50vw;
+    background-color: var(--bg-color-2);
+    color:var(--txt-color-1);
+  }
+  .section.section-logo,
+  .section.section-bandeau,
+  .section.section-bg-image-1,
+  .section.section-bg-image-2,
+  .section.section-bg-image-3,
+  .section.standard-content,
+  .container-gallery{
+    flex-direction: column;
+  }
+  .container-form{
+    padding: 1.5em;
+    width: 96vw;
+  }
+  .field{
+    position: relative;
+    width:85%;
+    margin: 1em 0;
+  }
+  input, textarea {
+    font-size: 1.3em;
+    padding: 10px 10px 5px 5px;
+    width: 100%;
+  }
+  .field span{
+    padding: 1em 5px;
+    font-size: 1.5em ;
+  }
+  .field input:focus ~ span, .field input:valid ~ span{
+    transform: translateY(-2.6em);
+    font-size: 1em;
+  }
+  .select-container select{
+    padding: 10px 10px 5px 5px;
+    font-size: 1.5em;
+  }
+  section.section-countdown-border{                  
+    height: 15em;
+  }
+  section.section-countdown{                         
+    padding: 5px 1vw 40px 1vw;
+    width: 10.3em;
+    font-size: 2em;
+  }
+  section.section-countdown h2 {
+    font-size: 1em;
+  }
+  section.section-countdown h2 span {
+    letter-spacing: 4px;
+    font-size: 0.5em;
+  }
+  .countdown{
+    margin-top: 10px;
+  }
+  .countdown div{
+    width: 1.7em;
+    height: 1.7em;
+    line-height: 1.7em;
+    margin: 0 8px;
+    font-size: 1em;
+  }
+  .countdown div::before{
+    content:'';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width:100%;
+    height: 22px;
+    background: var(--bg-color-4);
+    color: var(--txt-color-1);
+    font-size: 0.4em;
+    line-height: 20px;
+  }
+  .image-2-1-box{
+    width: 90vw;
+    height: 45vw;
+  }
+  .image-1-1-box{
+    width: 90vw;
+    height: 90vw;
+  }
+  .image-4-3-box{
+    width: 90vw;
+    height: 67.5vw;
+  }
+  .image-16-9-box{
+    width: 90vw;
+    height: 50.6vw;
+  }
+  .image-A4-box{
+    width: 90vw;
+    height: 127.3vw;
+  }
+  .text-on-image#color h1{
+    top: 10%;
+    font-size: 0.8em;
+  }
+  .text-on-image#color p{
+    top: 20%;
+    font-size: 0.8em;
+  }
+  .text-on-image#zoom h1{
+    font-size: 0.8em;
+  }
+  .slider{
+    width: 80vw;
+    height: 45vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .slides {
+    top: 0;
+    left: 0;
+    display: flex;
+    height: 45vw;
+    animation: slide-tel 20s ease-in-out infinite forwards;
+  }
+  .slides figure {
+    width: 80vw;
+    height: 45vw;
+    margin: 0;
+  }
+  .slides figure img {
+    width: 100%;
+    height: 45vw;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .slides figure figcaption {
+    position: absolute;
+    top: 0;
+    padding: 2.5em 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: inherit;
+    height: inherit;
+    background-color: var(--bg-color-2);
+    opacity: 0.7;
+  }
+  .slides figure h1{
+    opacity: 1;
+    font-size: 3em;
+    font-weight: 800;
+    color: white;
+  }
+  .dots_commands  {
+    position: absolute;
+    top: 38vw;
+    width: 80vw;
+    padding:0;
+    margin: 0;
+    text-align: center;
+  }
+  .dots_commands label {
+    position: relative;
+    border: none;
+    display: inline-block;
+    height:8px; width: 8px;
+    margin: 0.8em 0.8em;
+    text-indent: -9999px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  input[type="radio"]#show_slide2:checked ~ div.slides {
+    animation:none;
+    left: -80vw;
+  }
+  input[type="radio"]#show_slide3:checked ~ div.slides {
+    animation:none;
+    left: -160vw;
+  }
+  .photobanner {                  /* element qui bouge comportant toutes les images */
+    width: 1500vw;
+    font-size: 0;
+  }
+  .photobanner img {              /* image dans le photobanner */
+  margin-right: 5px;
+  height: 180px;
+  width: 320px;                   /* format 16:9 *//*attention à modifier le keyframe bannermove si vous modifiez ça*/
+  transition: all 0.5s ease;
+  }
+  .photobanner img:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+  }
+  .first {
+    animation: bannermove-tel 20s linear infinite;
+  }
+}

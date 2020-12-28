@@ -1,0 +1,47 @@
+// Mixins are shortcut with inputs to avoid repeating the same thing several times
+// They are called in scss using "@include"
+// Version of 2021 : Wackbar
+
+
+
+// Adapt transformation on every browser
+
+@mixin transform($transformation) {
+  transform: $transformation;
+  -moz-transform: $transformation;
+  -ms-transform: $transformation;
+  -o-transform: $transformation;
+  -webkit-transform: $transformation;
+}
+
+@mixin clearfix() {
+  &::after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
+// stylelint-disable property-disallowed-list
+@mixin transition($transition...) {
+  @if length($transition) == 0 {
+    $transition: $transition-base;
+  }
+
+  @if length($transition) > 1 {
+    @each $value in $transition {
+      @if $value == null or $value == none {
+        @warn "The keyword 'none' or 'null' must be used as a single argument.";
+      }
+    }
+  }
+
+  @if nth($transition, 1) != null {
+      transition: $transition;
+    }
+
+    @if nth($transition, 1) != null and nth($transition, 1) != none {
+      @media (prefers-reduced-motion: reduce) {
+        transition: none;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+/* --------------------- */
+/*       Countdown       */
+/* --------------------- */
+
+section.section-countdown-border{                         /* Compte a rebours avant la soiree */
+    background: rgb(68, 68, 68) var(--bg-image-countdown);
+    background-blend-mode: hard-light;
+    background-attachment: fixed;
+    display: flex;
+    height: 30em;
+  }
+  section.section-countdown{                         /* Compte a rebours avant la soiree */
+    padding: 5px 1vw 40px 1vw;
+    width: 30em;
+    font-size: 2em;
+    color: var(--txt-color-4);
+    text-align: center;
+    background: var(--bg-image-countdown);
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+  }
+  section.section-countdown h2 {
+    text-align: center;
+    font-size: 2em;
+    color: var(--txt-color-1);
+    font-family: var(--font-2);
+  }
+  section.section-countdown h2 span {
+    display: block;
+    letter-spacing: 6px;
+    font-size: 0.5em;
+    color: var(--txt-color-4);
+    font-family: var(--font-2);
+  }
+  .countdown{
+    display: flex;
+    margin-top: 50px;
+  }
+  .countdown div{
+    position: relative;
+    width: 1.7em;
+    height: 1.7em;
+    line-height: 1.7em;
+    text-align: center;
+    background: var(--bg-color-3);
+    color: var(--txt-color-1);
+    font-family: var(--font-2);
+    margin: 0 15px;
+    font-size: 3em;
+  }
+  .countdown div::before{
+    content:'';
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width:100%;
+    height: 35px;
+    background: var(--bg-color-4);
+    color: var(--txt-color-1);
+    font-size: 0.2em;
+    line-height: 35px;
+  }
+  .countdown #day::before{
+    content:'jours';
+  }
+  .countdown #hour::before{
+    content:'heures';
+  }
+  .countdown #minute::before{
+    content:'min';
+  }
+  .countdown #second::before{
+    content:'sec';
+  }
+  

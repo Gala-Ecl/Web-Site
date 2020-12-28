@@ -1,0 +1,27 @@
+/* --------------------- */
+/*         Banner        */
+/* --------------------- */
+section.section-banner {        /* section definissant le contour de la bannière */
+    width: 100%;
+    overflow: hidden;
+    padding: 2em 0;
+    background: var(--bg-main-color);
+  }
+  .photobanner {                  /* element qui bouge comportant toutes les images */
+    width: 700vw;
+    font-size: 0;
+  }
+  .photobanner img {              /* image dans le photobanner */
+  margin-right: 5px;
+  height: 337.5px;
+  width: 600px;                   /* format 16:9 *//*attention à modifier le keyframe bannermove si vous modifiez ça*/
+  transition: all 0.5s ease;
+  }
+  .photobanner img:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+  }
+  .first {
+    animation: bannermove 30s linear infinite;
+  }

@@ -66,7 +66,7 @@
     </section>
     <section class="section-countdown-border">
       <section class="section-countdown">
-        <h2><span>Compte à Rebours</span> avant le Gala 2020 </h2>
+        <h2><span>Compte à Rebours</span> avant le Gala 2021 </h2>
         <div class="countdown">
           <div id="day">{{days}}</div>
           <div id="hour">{{hours}}</div>
@@ -88,34 +88,6 @@
       <img class="edition" src="../../logo_gala_2019.jpg">
     </section>
     <section class="section-bg-image-3">
-    </section>
-    <section class="section-slider"> 
-      <div class="slider">
-        <input type="radio" id="show_slide1" name="slider_commands">
-        <input type="radio" id="show_slide2" name="slider_commands">
-        <input type="radio" id="show_slide3" name="slider_commands">
-        <div class="slides">
-          <figure id="slide1">
-              <a  href="/graduation"><img src="../../diplomes.png" alt="La journée"></a>
-              <figcaption><h1>La Journée</h1></figcaption>
-          </figure>
-          <figure id="slide2">
-              <a  href="/diner"><img src="../../diner.jpg" alt="Le dîner"></a>
-              <figcaption><h1>Le Dîner</h1></figcaption>
-          </figure>
-          <figure id="slide3">
-              <a  href="/party"><img src="../../barnums.png" alt="La Soirée"></a>
-              <figcaption><h1>La Soirée</h1></figcaption>
-          </figure>
-        </div>
-        <nav>
-          <ul class="dots_commands">
-            <li><label for="show_slide1">Slide 1</label></li>
-            <li><label for="show_slide2">Slide 2</label></li>
-            <li><label for="show_slide3">Slide 3</label></li>
-          </ul>
-        </nav>
-      </div>
     </section>
     <section class="section-bg-image-1">
       <div class="container-gallery">
@@ -152,6 +124,43 @@
       </div>
     </section>
     <section class="section-bg-image-3"></section>
+    <section class="section-slider">
+      <div id="carousel" class="carousel carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-bs-target="#carousel" data-bs-slide-to="0" class="active"></li>
+          <li data-bs-target="#carousel" data-bs-slide-to="1"></li>
+          <li data-bs-target="#carousel" data-bs-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <a  href="/graduation"><img src="../../images/illustrations/barnums.png" class="d-block w-100" alt="La Journée"></a>
+            <div class="carousel-caption">
+              <h1>Journée</h1>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <a  href="/diner"><img src="../../images/illustrations/barnums.png" class="d-block w-100" alt="Le dîner"></a>
+            <div class="carousel-caption">
+              <h1>Dîner</h1>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <a  href="/party"><img src="../../images/illustrations/barnums.png" class="d-block w-100" alt="La soirée"></a>
+            <div class="carousel-caption">
+              <h1>Soirée</h1>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </a>
+      </div>    
+    </section>
     <section>
       <h1>Bienvenue sur le site du gala</h1>
       <br />
@@ -168,7 +177,7 @@
 export default {
   data() {
     return {
-      beginningDatetime: new Date("2020-11-28T18:00:00"),
+      beginningDatetime: new Date("2021-11-27T18:00:00"),
       days : undefined,
       hours : undefined,
       minutes : undefined,
