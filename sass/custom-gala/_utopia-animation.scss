@@ -1,0 +1,29 @@
+// Contient l'animation permettant de faire bouger la lune devant le soleil
+
+section.section-moon {
+    height: 30vw;
+    font-size: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-color-1);
+  }
+  .moon{
+    background: var(--txt-color-1);
+    width: 20vw;
+    height: 20vw;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 10px  var(--txt-color-1), 0 0 80px 8px var(--txt-color-1);
+  }  
+  .moon::before{
+    content: '';
+    background-color: var(--bg-color-4);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    animation: 5s cresent  infinite alternate;
+  }
+  
+  

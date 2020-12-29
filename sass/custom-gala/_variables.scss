@@ -1,0 +1,161 @@
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+// Version of 2021 : Wackbar
+
+
+//----------------------------------------------------------------------------
+// COLORS
+//----------------------------------------------------------------------------
+
+// Black & White color system
+
+$white:    #fff;
+$gray-230: rgb(230, 230, 230);
+$gray-210: rgb(210, 210, 210);
+$gray-190: rgb(190, 190, 190);
+$gray-170: rgb(170, 170, 170);
+$gray-150: rgb(150, 150, 150);
+$gray-130: rgb(130, 130, 130);
+$gray-110: rgb(110, 110, 110);
+$gray-90:  rgb(90, 90, 90);
+$gray-70:  rgb(70, 70, 70);
+$gray-50:  rgb(50, 50, 50);
+$gray-30:  rgb(30, 30, 30);
+$gray-10:  rgb(10, 10, 10);
+$black:    #000;
+
+// Basic color system
+
+$blue:    #0000ff;
+$magenta: #ff00ff;
+$red:     #ff0000;
+$yellow:  #ffff00;
+$green:   #00ff00;
+$cyan:    #00ffff;
+$purple:  #880088;
+$orange:  #ff8800;
+
+// Gala color system
+$light-color-1:   $white;
+$light-color-2:   $gray-210;
+$light-color-3:   $gray-190;
+$dark-color-1:    $black;
+$dark-color-2:    $gray-10;
+$dark-color-3:    $gray-30;
+$gold-light:      rgb(165, 126, 42);
+$gold-dark:       rgb(124, 95, 32);
+$night-dark:      rgb(40, 40, 55);
+$night-light:     rgb(65, 65, 90);
+
+// Tool color system
+$success:     #076338;
+$warning:     #e69e18;
+$info:        #8b7beb;
+$danger:      #800e0e;
+
+
+//----------------------------------------------------------------------------
+// Fonts
+//----------------------------------------------------------------------------
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Monoton&family=Raleway&display=swap');
+@font-face {font-family: "Above"; 	src: url('../../ABOVE\ \ -\ PERSONAL\ USE\ ONLY.ttf'); }
+
+$font-main:'Raleway', sans-serif;
+$font-title: 'Above';
+$font-cursive: 'Dancing Script', cursive;
+$font-original: 'Monoton', cursive;
+
+
+//----------------------------------------------------------------------------
+// Basic Values
+//----------------------------------------------------------------------------
+// These basic values are used in other variables in order to uniformize the all web-site
+
+// basic shadows
+$shadow-light:       "0px 3px 5px rgba(0, 0, 0, .2)";
+$shadow-heavy:       "0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)";
+$shadow-heavy-hover: "box-shadow: 0 7px 8px rgba(0, 0, 0, 0.18), 0 5px 5px rgba(0, 0, 0, 0.12)";
+
+// basic padding
+$padding-large:  15vw;
+$padding-normal: 10vw;
+$padding-medium:  5vw;
+$padding-small:   1vw;
+
+// basic spacer
+$spacer: 1rem;
+
+// basic margin
+$margin-large:   15vw;
+$margin-normal:  10vw;
+$margin-medium:   5vw;
+$margin-small:    1vw;
+
+//----------------------------------------------------------------------------
+// Responsive
+//----------------------------------------------------------------------------
+
+// screen sizes
+$small:  576px;
+$medium: 768px;
+$large: 1400px;
+
+// media queries shortcut
+$large-up: "only screen and (min-width: #{$large})";
+$medium-down: "only screen and (max-width: #{$medium})";
+$samll-down: "only screen and (max-width: #{$small})";
+
+
+//----------------------------------------------------------------------------
+// CSS Elements
+//----------------------------------------------------------------------------
+
+// Navbar
+
+$navbar-padding-y:                  $spacer / 2;
+$navbar-padding-x:                  0;
+
+// Carousel
+
+$enable-gradients:                   false;
+
+$carousel-control-color:             $white;
+$carousel-control-width:             5%;
+$carousel-control-opacity:           0.5;
+$carousel-control-hover-opacity:     0.9;
+$carousel-control-transition:        opacity .15s ease;
+
+$carousel-indicator-width:           30px;
+$carousel-indicator-height:          3px;
+$carousel-indicator-hit-area-height: 10px;
+$carousel-indicator-spacer:          3px;
+$carousel-indicator-opacity:         .5;
+$carousel-indicator-active-bg:       $white;
+$carousel-indicator-active-opacity:  1;
+$carousel-indicator-transition:      opacity .6s ease;
+
+$carousel-caption-width:             100%;
+$carousel-caption-height:            100%;
+$carousel-caption-color:             $black;
+$carousel-caption-bg-color:          $gold-light;
+$carousel-caption-opacity:           0.7;
+$carousel-caption-padding-y:         1.25rem;
+$carousel-caption-spacer:            0;
+$carousel-caption-h1-size:           5.5rem;
+$carousel-caption-h1-font:           $font-title;
+
+$carousel-control-icon-width:        4rem;
+
+$carousel-control-prev-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$carousel-control-color}'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>");
+$carousel-control-next-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$carousel-control-color}'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>");
+
+$carousel-transition-duration:       1s;
+$carousel-transition:                transform $carousel-transition-duration ease-in-out; // Define transform transition first if using multiple transitions (e.g., `transform 2s ease, opacity .5s ease-out`)
+
+$carousel-dark-indicator-active-bg:  $black;
+$carousel-dark-caption-color:        $black;
+$carousel-dark-control-icon-filter:  invert(1) grayscale(100);

@@ -1,0 +1,29 @@
+// Here you can find global attributes for all elements of the website
+// Version of 2021 : Wackbar
+
+
+*{                                        /* Ensemble des elements */
+    margin:          0;
+    padding:         0;
+    box-sizing:      border-box;
+    scroll-behavior: smooth;
+    font-family:     sans-serif;
+    color:           $dark-color-1;
+}
+
+p, a{                                     /* Ensemble des paragraphes et liens */
+    font-family: $font-main;
+    color:       $dark-color-2;
+}
+
+h1, h2, h2, h3, h4, h5{                   /* Ensemble des titres */
+    font-family: $font-title;
+    color:       $dark-color-1;
+}
+
+section{                                  /* Ensemble des sections */
+    width: 100vw;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+  }
