@@ -11,10 +11,7 @@ import Graduation from "@/components/graduation";
 import Information from "@/components/information";
 import Partners from "@/components/partners";
 import Ticketing from "@/components/partners";
-// import Projects from "@/components/projects";
-// import Contact from "@/components/contact";
-// import Skilder from "@/components/skilder";
-// import DigitalLab from "@/components/digital-lab";
+
 
 Vue.use(Router);
 
